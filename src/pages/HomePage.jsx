@@ -1,5 +1,6 @@
-import { useNavigate } from 'react-router-dom'
 import { useAuthStore } from '../store/useAuthStore'
+import { useNavigate } from 'react-router-dom'
+import { Box, Button, Typography, Paper } from '@mui/material'
 
 export default function HomePage() {
   const user = useAuthStore((state) => state.user)
@@ -11,14 +12,30 @@ export default function HomePage() {
     navigate('/')
   }
 
-  if (!user) return <p>Please log in first.</p>
+  if (!user) return <Typography align="center">Please log in first.</Typography>
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
-      <h1>Welcome, {user.name} 👋</h1>
-      <button onClick={handleLogout} className="bg-red-500 text-white p-2 rounded">
-        Logout
-      </button>
-    </div>
+    <Box
+      sx={{
+        height: '100vh',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        bgcolor: '#e3f2fd',
+      }}
+    >
+      <Paper elevation={3} sx={{ p: 4, textAlign: 'center' }}>
+        <Typography variant="h5" gutterBottom>
+          Welcome, {user.name} 👋
+        </Typography>
+        <Button
+          variant="contained"
+          color="error"
+          onClick={handleLogout}
+        >
+          Logout
+        </Button>
+      </Paper>
+    </Box>
   )
 }
