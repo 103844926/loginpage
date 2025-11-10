@@ -25,7 +25,7 @@ export default function HomePage() {
       }}
     >
       <Paper elevation={3} sx={{ p: 4, textAlign: 'center' }}>
-        <Typography variant="h5" gutterBottom>
+        <Typography variant="h3" gutterBottom>
           Welcome, {user.name} 👋
         </Typography>
         <Button
