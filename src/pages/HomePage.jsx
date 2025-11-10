@@ -12,7 +12,7 @@ export default function HomePage() {
     navigate('/')
   }
 
-  if (!user) return <Typography align="center">Please log in first.</Typography>
+  if (!user) return <Typography variant="h1" align="center" >Please log in first.</Typography>
 
   return (
     <Box
@@ -25,8 +25,16 @@ export default function HomePage() {
       }}
     >
       <Paper elevation={3} sx={{ p: 4, textAlign: 'center' }}>
-        <Typography variant="h3" gutterBottom>
-          Welcome, {user.name} 👋
+        <Typography variant="h2" color="action.success" gutterBottom>
+            Welcome to my home page
+        </Typography>
+        <Typography variant="h3" color="primary.secondary" gutterBottom>
+          Hello, {user.name} 👋
+        </Typography>
+        <Typography variant="body1" gutterBottom>
+          You have successfully logged in.
+          But there's nothing much to see here yet.
+          Oh well.
         </Typography>
         <Button
           variant="contained"
