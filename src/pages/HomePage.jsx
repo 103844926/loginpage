@@ -21,7 +21,7 @@ export default function HomePage() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        bgcolor: '#e3f2fd',
+        bgcolor: '#f5f7fa',
       }}
     >
       <Paper elevation={3} sx={{ p: 4, textAlign: 'center' }}>
