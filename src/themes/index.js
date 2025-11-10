@@ -1,22 +1,12 @@
 import { createTheme } from '@mui/material/styles';
 import palette from './palates';
 import typography from './typography';
+import components from './components';
 
 const theme = createTheme({
   palette,
   typography,
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: { borderRadius: 12, padding: '8px 24px' },
-        containedPrimary: {
-          backgroundColor: palette.primary.main,
-          color: '#fff',
-          '&:hover': { backgroundColor: '#20a87c' },
-        },
-      },
-    },
-  },
+  components, 
 });
 
 export default theme;

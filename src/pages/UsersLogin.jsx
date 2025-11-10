@@ -93,7 +93,7 @@ export default function LoginPage() {
         <Button
           fullWidth
           variant="contained"
-          color="primary.primary"
+          color="primary"
           onClick={handleLogin}
         >
           Login

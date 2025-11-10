@@ -37,8 +37,8 @@ export default function HomePage() {
           Oh well.
         </Typography>
         <Button
-          variant="contained"
-          color="error"
+          variant="outlined"
+          color="primary"
           onClick={handleLogout}
         >
           Logout
