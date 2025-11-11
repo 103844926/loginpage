@@ -2,9 +2,10 @@ const palette= {
     mode: 'light',
     primary: {
       main: '#28cb8b',
-      primary: '#28cb8b',
-      secondary: '#263238',
-      info: '#2194f3',
+    },
+    
+    secondary: {
+        main: '#263238',
     },
 
     color_shade: {
@@ -27,6 +28,7 @@ const palette= {
         error: '#e53835',
         success: '#2e7d31',
         warning: '#fbc02d',
+        info: '#2194f3',
     },
 
     neutral: {

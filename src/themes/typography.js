@@ -9,6 +9,9 @@ const typography = {
   h5: { fontSize: '20px', lineHeight: '28px', fontWeight: 600 },
   body1: { fontSize: '18', lineHeight: '28px', fontWeight: 500 },
   body2: { fontSize: '16', lineHeight: '24px', fontWeight: 500 },
+  body3: { fontSize: '14', lineHeight: '20px', fontWeight: 500 },
+  body4: { fontSize: '12', lineHeight: '16px', fontWeight: 500 },
+  body5: { fontSize: '12', lineHeight: '14px', fontWeight: 400 },
   button: { textTransform: 'none', fontWeight: 500 },
 };
 

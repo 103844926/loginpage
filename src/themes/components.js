@@ -1,5 +1,5 @@
-import { color } from "@mui/system";
-import palette from "./palates";
+import { border, color } from "@mui/system";
+import palette from './palates';
 
 const components = {
   MuiButton: {
@@ -24,51 +24,148 @@ const components = {
           fontSize: '1rem',
         },
 
-      containedPrimary: {
-        backgroundColor: 'palette.primary.main',       // default
+      containedPrimary: (theme) => ({
+        backgroundColor: palette.primary.main,       // default
         color: '#fff',
         '&:hover': {
-          backgroundColor: 'palette.color_shade.s2',     // hover
+          backgroundColor: palette.color_shade.s2,     // hover
         },
         '&:active': {
-          backgroundColor: 'palette.color_shade.s4',     // click / active
+          backgroundColor: palette.color_shade.s4,     // click / active
         },
         '&:focus-visible': {
-          borderColor: 'palette.neutral.grey',
-          backgroundColor: 'palette.color_shade.s3', // focus
+          borderColor: palette.neutral.grey,
+          backgroundColor: palette.color_shade.s3, // focus
         },
         '&.Mui-disabled': {
-          backgroundColor: 'palette.neutral.l_grey',      // disabled
-          color: 'palette.neutral.d_grey',
+          backgroundColor: palette.neutral.l_grey,      // disabled
+          color: palette.neutral.d_grey,
+        },
+      }),
+
+      outlinedPrimary: (theme) => ({
+        borderColor: palette.primary,
+        color: palette.primary,
+        '&:hover': {
+          backgroundColor: palette.color_tint.t4,
+        },
+        '&:focus-visible': {
+          borderColor: palette.neutral.grey,
+          backgroundColor: palette.color_tint.t4, // focus
+        },
+        '&:active': {
+          borderColor: 'transparent',
+          backgroundColor: palette.color_tint.t4,
+        },
+        '&.Mui-disabled': {
+          borderColor: 'transparent',
+          backgroundColor: palette.neutral.l_grey,      // disabled
+          color: palette.neutral.d_grey,
+        },
+      }),
+
+      textPrimary: {
+        color: palette.primary,
+        '&:hover': {
+          backgroundColor: palette.color_tint.t4,
+        },
+        '&:focus-visible': {
+          borderColor: palette.neutral.grey,
+          backgroundColor: palette.color_tint.t4, // focus
+        },
+        '&:active': {
+          borderColor: 'transparent',
+          backgroundColor: palette.color_tint.t4,
+        },
+        '&.Mui-disabled': {
+          borderColor: 'transparent',
+          backgroundColor: palette.neutral.l_grey,      // disabled
+          color: palette.neutral.d_grey,
         },
       },
 
-      outlinedPrimary: {
-        borderColor: 'palette.primary.primary',
-        color: 'palette.primary.primary',
-        '&:hover': {
-          backgroundColor: 'palette.color_tint.t4',
-        },
-        '&:focus-visible': {
-          borderColor: 'palette.neutral.grey',
-          backgroundColor: 'palette.color_tint.t4', // focus
-        },
-        '&:active': {
-          borderColor: 'transparent',
-          backgroundColor: 'palette.color_tint.t4',
-        },
-        '&.Mui-disabled': {
-          borderColor: 'transparent',
-          backgroundColor: 'palette.neutral.l_grey',      // disabled
-          color: 'palette.neutral.d_grey',
-        },
-      },
     },
     defaultProps: {
       disableElevation: true,
       // loading state can be handled manually in your component
     },
   },
+
+  MuiTextField: {
+  styleOverrides: {
+    root: {
+      '& .MuiInputLabel-root': {
+        color: palette.neutral.white,
+      },
+      '& .MuiInputLabel-root.Mui-focused': {
+        color: 'transparent',
+      },
+      '& .MuiOutlinedInput-root': {
+        backgroundColor: palette.neutral.l_grey, // Move background here
+        color: palette.neutral.black,
+        '& fieldset': {
+          borderColor: 'transparent',
+          // Remove backgroundColor from fieldset
+        },
+        '&:hover fieldset': {
+          borderColor: 'transparent',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: 'transparent',
+        },
+        '& input': { // Explicitly set input text color
+          color: palette.neutral.black,
+        },
+      },
+    },
+  },
+},
+MuiIconButton: {
+      styleOverrides: {
+        root:{
+          borderRadius: '50%',
+          padding: 6,
+        },
+
+        colorPrimary: (theme) => ({
+          
+          backgroundColor: palette.neutral.grey,       // default
+           color: '#fff',
+        '&:hover': {
+          backgroundColor: palette.color_shade.s2,     // hover
+        },
+        '&:active': {
+          backgroundColor: palette.color_shade.s4,     // click / active
+        },
+        '&:focus-visible': {
+          borderColor: palette.neutral.grey,
+          backgroundColor: palette.color_shade.s3, // focus
+        },
+        '&.Mui-disabled': {
+          backgroundColor: palette.neutral.l_grey,      // disabled
+          color: palette.neutral.d_grey,
+        },
+        }),
+
+        colorSecondary: (theme) => ({
+        color: palette.primary,
+        '&:hover': {
+          backgroundColor: palette.color_tint.t4,
+        },
+        '&:focus-visible': {
+          borderColor: palette.neutral.grey,
+          backgroundColor: palette.color_tint.t4, // focus
+        },
+        '&:active': {
+          backgroundColor: palette.color_tint.t4,
+        },
+        '&.Mui-disabled': {
+          backgroundColor: palette.neutral.l_grey,      // disabled
+          color: palette.neutral.d_grey,
+        },
+      }),
+      },
+    },
 };
 
 export default components;
