@@ -4,7 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import logo from './Nexcent_Logo.svg';
+import { Images } from '../const';
 
 export default function Header() {
   const location = useLocation();
@@ -31,8 +31,8 @@ export default function Header() {
     <>
       <AppBar position="static" sx={{ backgroundColor: (theme) => theme.palette.neutral.silver }}>
         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', px: { xs: 2, md: 12 } }}>
-          <img src={logo} alt="Company Logo" style={{ width: 120, height: 'auto' }} />
-          
+          <img src={Images.logo} alt="Company Logo" style={{ width: 120, height: 'auto' }} />
+
           {/* Desktop Menu */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
             {menuItems.map((item) => (
@@ -84,15 +84,15 @@ export default function Header() {
             <CloseIcon />
           </IconButton>
         </Box>
-        
+
         <List>
           {menuItems.map((item) => (
             <ListItem key={item.path} disablePadding>
-              <ListItemButton 
+              <ListItemButton
                 onClick={() => handleMenuClick(item.path)}
                 selected={activePage === item.path}
               >
-                <ListItemText 
+                <ListItemText
                   primary={item.label}
                   primaryTypographyProps={{
                     fontWeight: activePage === item.path ? 700 : 500
@@ -103,24 +103,24 @@ export default function Header() {
           ))}
 
           <Box sx={{ px: 2, pb: 2 }}>
-          <Button 
-            fullWidth
-            variant="text" 
-            color="primary" 
-            onClick={() => { navigate('/login'); setMobileMenuOpen(false); }}
-            sx={{ mb: 1 }}
-          >
-            Login
-          </Button>
-          <Button 
-            fullWidth
-            variant="contained" 
-            color="primary"
-            onClick={() => { navigate('/login'); setMobileMenuOpen(false); }}
-          >
-            Sign Up
-          </Button>
-        </Box>
+            <Button
+              fullWidth
+              variant="text"
+              color="primary"
+              onClick={() => { navigate('/login'); setMobileMenuOpen(false); }}
+              sx={{ mb: 1 }}
+            >
+              Login
+            </Button>
+            <Button
+              fullWidth
+              variant="contained"
+              color="primary"
+              onClick={() => { navigate('/login'); setMobileMenuOpen(false); }}
+            >
+              Sign Up
+            </Button>
+          </Box>
         </List>
       </Drawer>
     </>

@@ -1,7 +1,7 @@
 // src/components/Footer.js
 import { useState } from 'react';
 import { AppBar, Toolbar, Button, TextField, Box, Typography, InputAdornment, IconButton, Grid } from '@mui/material';
-import logo from './Nexcent_Logo_White.svg';
+import { Images } from '../const';
 import SendIcon from '@mui/icons-material/Send';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -30,11 +30,11 @@ export default function Footer() {
         }}
       >
         <Grid container columnSpacing={{ xs: 2, sm: 4, md: 5, lg: 12 }} rowSpacing={{ xs: 3, sm: 4, md: 5 }}>
-          
+
           {/* Logo & Social */}
           <Grid item xs={12} md={3}>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 } }}>
-              <img src={logo} alt="Company Logo" style={{ width: 180, height: 'auto' }} />
+              <img src={Images.logoWhite} alt="Company Logo" style={{ width: 180, height: 'auto' }} />
               <Typography
                 variant="body2"
                 sx={{ lineHeight: 1.8, fontSize: { xs: '0.7rem', sm: '0.8rem', md: '0.9rem' } }}

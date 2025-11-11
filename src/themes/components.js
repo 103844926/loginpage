@@ -38,8 +38,8 @@ const components = {
           backgroundColor: palette.color_shade.s3, // focus
         },
         '&.Mui-disabled': {
-          backgroundColor: palette.neutral.l_grey,      // disabled
-          color: palette.neutral.d_grey,
+          backgroundColor: palette.neutral.grey_light,      // disabled
+          color: palette.neutral.grey_dark,
         },
       }),
 
@@ -59,8 +59,8 @@ const components = {
         },
         '&.Mui-disabled': {
           borderColor: 'transparent',
-          backgroundColor: palette.neutral.l_grey,      // disabled
-          color: palette.neutral.d_grey,
+          backgroundColor: palette.neutral.grey_light,      // disabled
+          color: palette.neutral.grey_dark,
         },
       }),
 
@@ -79,8 +79,8 @@ const components = {
         },
         '&.Mui-disabled': {
           borderColor: 'transparent',
-          backgroundColor: palette.neutral.l_grey,      // disabled
-          color: palette.neutral.d_grey,
+          backgroundColor: palette.neutral.grey_light,      // disabled
+          color: palette.neutral.grey_dark,
         },
       },
 
@@ -101,7 +101,7 @@ const components = {
         color: 'transparent',
       },
       '& .MuiOutlinedInput-root': {
-        backgroundColor: palette.neutral.l_grey, // Move background here
+        backgroundColor: palette.neutral.grey_light, // Move background here
         color: palette.neutral.black,
         '& fieldset': {
           borderColor: 'transparent',
@@ -142,8 +142,8 @@ MuiIconButton: {
           backgroundColor: palette.color_shade.s3, // focus
         },
         '&.Mui-disabled': {
-          backgroundColor: palette.neutral.l_grey,      // disabled
-          color: palette.neutral.d_grey,
+          backgroundColor: palette.neutral.grey_light,      // disabled
+          color: palette.neutral.grey_dark,
         },
         }),
 
@@ -160,8 +160,8 @@ MuiIconButton: {
           backgroundColor: palette.color_tint.t4,
         },
         '&.Mui-disabled': {
-          backgroundColor: palette.neutral.l_grey,      // disabled
-          color: palette.neutral.d_grey,
+          backgroundColor: palette.neutral.grey_light,      // disabled
+          color: palette.neutral.grey_dark,
         },
       }),
       },
