@@ -2,8 +2,6 @@ import { Box, Button, Typography, Container, Grid, Stack } from '@mui/material'
 import { HomeImages } from '@/const';
 import '@/themes/styles/global.scss'
 
-export default function LandingPart2() {
-    
 const clients = [
     HomeImages.landlogo1,
     HomeImages.landlogo2,
@@ -14,6 +12,7 @@ const clients = [
     HomeImages.landlogo2, // Client7
 ];
 
+export function LandingPart2() {
     return (
         <>
             <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 } }}>
@@ -33,12 +32,11 @@ const clients = [
 
                     <Stack
                         direction="row"
-                        spacing={5}         
                         flexWrap="wrap"     
                         justifyContent="center"
                         alignItems="center"
                         mt={4}
-                        gap={4}            
+                        gap={13}            
                     >
                         {clients.map((client, idx) => (
                             <Box key={idx} sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -61,7 +59,7 @@ const clients = [
                     </Grid>
 
                     <Grid container className="row-center" >
-                        <Grid item xs={12} sm={6} md={3.5}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Box className="small-column-center">
                                 <img src={HomeImages.landicon1} alt="Icon1" style={{ width: '60px', height: '60px' }} />
                                 <Typography variant="h3" color="neutral.grey_dark" >
@@ -73,7 +71,7 @@ const clients = [
                             </Box>
                         </Grid>
 
-                        <Grid item xs={12} sm={6} md={3.5}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Box className="small-column-center">
                                 <img src={HomeImages.landicon2} alt="Icon2" style={{ width: '60px', height: '60px' }} />
                                 <Typography variant="h3" color="neutral.grey_dark" >
@@ -85,7 +83,7 @@ const clients = [
                             </Box>
                         </Grid>
 
-                        <Grid item xs={12} sm={6} md={3.5}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <Box className="small-column-center">
                                 <img src={HomeImages.landicon3} alt="Icon3" style={{ width: '60px', height: '60px' }} />
                                 <Typography variant="h3" color="neutral.grey_dark" >

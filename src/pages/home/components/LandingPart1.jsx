@@ -6,11 +6,11 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/themes/styles/slider.scss";
 import '@/themes/styles/global.scss'
 
-export default function LandingPart1() {
+export function LandingPart1() {
 
   return (
-    <Box sx={{ backgroundColor: 'neutral.silver', py: { xs: 4, md: 8 } }}>
-      <Container maxWidth="lg">
+    <Box sx={{ backgroundColor: 'neutral.silver' }}>
+      <Container maxWidth="lg" sx={{py: { xs: 6, md: 8 }, px: { xs: 4, md: 0 }}}>
         <Slider
           dots={true}
           infinite={true}
@@ -24,7 +24,7 @@ export default function LandingPart1() {
           {/* Slide 1 */}
           <Box>
             <Box className ="flex-box-slider">
-              <Stack flex={1} spacing={4} alignItems="flex-start">
+              <Stack flex={3} spacing={4} alignItems="flex-start">
                 <Typography variant="h1" color="neutral.grey_dark">
                   Lessons and insights <br />
                   <Box component="span" color="primary.main">
@@ -39,7 +39,7 @@ export default function LandingPart1() {
                 </Button>
               </Stack>
 
-              <Box sx={{ flex: 1 }}>
+              <Box sx={{ flex: 2 }}>
                 <img src={HomeImages.landillu1} alt="Illustration 1" style={{ width: '80%', height: 'auto' }} />
               </Box>
             </Box>
@@ -48,7 +48,7 @@ export default function LandingPart1() {
           {/* Slide 2 */}
           <Box>
             <Box className ="flex-box-slider">
-              <Stack flex={1} spacing={4} alignItems="flex-start">
+              <Stack flex={3} spacing={4} alignItems="flex-start">
                 <Typography variant="h1" color="neutral.grey_dark">
                   Lessons and insights <br />
                   <Box component="span" color="primary.main">
@@ -63,7 +63,7 @@ export default function LandingPart1() {
                 </Button>
               </Stack>
 
-              <Box sx={{ flex: 1 }}>
+              <Box sx={{ flex: 2 }}>
                 <img src={HomeImages.landillu1} alt="Illustration 1" style={{ width: '80%', height: 'auto' }} />
               </Box>
             </Box>
@@ -72,7 +72,7 @@ export default function LandingPart1() {
           {/* Slide 3 */}
           <Box>
             <Box className ="flex-box-slider">
-              <Stack flex={1} spacing={4} alignItems="flex-start">
+              <Stack flex={3} spacing={4} alignItems="flex-start">
                 <Typography variant="h1" color="neutral.grey_dark">
                   Lessons and insights <br />
                   <Box component="span" color="primary.main">
@@ -87,7 +87,7 @@ export default function LandingPart1() {
                 </Button>
               </Stack>
 
-              <Box sx={{ flex: 1 }}>
+              <Box sx={{ flex: 2 }}>
                 <img src={HomeImages.landillu1} alt="Illustration 1" style={{ width: '80%', height: 'auto' }} />
               </Box>
             </Box>

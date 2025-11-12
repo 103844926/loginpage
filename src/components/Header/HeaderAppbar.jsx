@@ -1,4 +1,4 @@
-// src/components/HeaderDesktop.jsx
+// src/components/HeaderAppbar.jsx
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import { HeaderImages } from '@/const';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -13,7 +13,7 @@ const MENU_ITEMS = [
   { label: 'FAQ', path: '/faq' },
 ];
 
-export default function HeaderDesktop() {
+export function HeaderAppbar() {
   const theme = useTheme();
   const location = useLocation();
   const navigate = useNavigate();

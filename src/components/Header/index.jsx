@@ -1,12 +1,12 @@
 // src/components/Header.jsx
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
-import HeaderDesktop from './HeaderDesktop';
-import HeaderMobile from './HeaderMobile';
+import { HeaderAppbar } from './HeaderAppbar';
+import { HeaderDrawer } from './HeaderDrawer';
 
-export default function Header() {
+export function Header() {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
 
-  return isDesktop ? <HeaderDesktop /> : <HeaderMobile />;
+  return isDesktop ? <HeaderAppbar /> : <HeaderDrawer />;
 }

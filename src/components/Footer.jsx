@@ -7,7 +7,7 @@ import { Send, Twitter, YouTube, Instagram, Facebook } from '@mui/icons-material
 const COMPANY_ITEMS = ['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials'];
 const SUPPORT_ITEMS = ['Help Center', 'Term of Services', 'Legal', 'Privacy Policy', 'Status'];
 
-export default function Footer() {
+export function Footer() {
   const [email, setEmail] = useState('');
 
   const handleSend = () => {

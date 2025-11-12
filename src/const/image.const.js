@@ -25,6 +25,9 @@ export const HomeImages = {
     landillu1: '/images/img-landing-illu1.png',
     landillu2: '/images/img-landing-illu2.png',
     landillu3: '/images/img-landing-illu3.png',
+    landillu4: '/images/img-landing-illu4.png',
+    landillu5: '/images/img-landing-illu5.png',
+    landillu6: '/images/img-landing-illu6.png',
 
     /// Clients Logo
     landlogo1: '/images/img-landing-client1.png',
@@ -38,5 +41,8 @@ export const HomeImages = {
     landicon1: '/images/img-landing-icon1.png',
     landicon2: '/images/img-landing-icon2.png',
     landicon3: '/images/img-landing-icon3.png',
+
+    /// Avatar
+    TimSmith: '/images/img-landing-avatim.png'
 };
 

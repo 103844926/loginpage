@@ -1,4 +1,4 @@
-// src/components/HeaderMobile.jsx
+// src/components/HeaderDrawer.jsx
 import { AppBar, Toolbar, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, Button } from '@mui/material';
 import { HeaderImages } from '@/const';
 import { Menu, Close } from '@mui/icons-material';
@@ -15,7 +15,7 @@ const MENU_ITEMS = [
   { label: 'FAQ', path: '/faq' },
 ];
 
-export default function HeaderMobile() {
+export function HeaderDrawer() {
   const theme = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
