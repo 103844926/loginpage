@@ -37,15 +37,11 @@ export default function LoginPage() {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        bgcolor: '#f5f7fa',
+        bgcolor: "neutral.grey_blue",
       }}
     >
       <Paper elevation={3} sx={{ p: 4, width: 320, textAlign: 'center' }}>
-        <Typography 
-            variant="h5" 
-            color="info"
-            gutterBottom
-            >
+        <Typography variant="h3" color="primary.info" gutterBottom>
           Login
         </Typography>
 

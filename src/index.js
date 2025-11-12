@@ -3,25 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import theme from './themes';
+import '@fontsource/inter/400.css'; // regular
+import '@fontsource/inter/500.css'; // medium
+import '@fontsource/inter/600.css'; // semi-bold
+import '@fontsource/inter/700.css'; // bold
 
-const theme = createTheme({
-  palette: {
-    mode: 'light',
-    primary: {
-      main: '#28cb8b',
-    },
-    secondary: {
-      main: '#263238',
-    },
-    error: {
-      main: '#e53835',
-    },
-    info: {
-      main: '#2194f3',
-    },
-  },
-});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
