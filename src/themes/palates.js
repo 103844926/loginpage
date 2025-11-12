@@ -33,13 +33,19 @@ const palette= {
 
     neutral: {
         black: '#263238',
-        d_grey: '#4d4d4d',
+        grey_dark: '#4d4d4d',
         grey: '#717171',
-        l_grey: '#89939e',
+        grey_light: '#89939e',
         grey_blue: '#abbed1',
         silver: '#f5f7fa',
         white: '#ffffff',
+    },
+
+    background: {
+        default: '#ffffff',
+        paper: '#ffffff',
     }
+
   };
 
 export default palette;
