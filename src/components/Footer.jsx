@@ -4,16 +4,15 @@ import { AppBar, Toolbar, Button, TextField, Box, Typography, InputAdornment, Ic
 import { FooterImages } from '@/const';
 import { Send, Twitter, YouTube, Instagram, Facebook } from '@mui/icons-material';
 
+const COMPANY_ITEMS = ['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials'];
+const SUPPORT_ITEMS = ['Help Center', 'Term of Services', 'Legal', 'Privacy Policy', 'Status'];
+
 export default function Footer() {
   const [email, setEmail] = useState('');
 
   const handleSend = () => {
     console.log('Email Sent!!');
   };
-
-  const COMPANY_ITEMS = ['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials'];
-  const SUPPORT_ITEMS = ['Help Center', 'Term of Services', 'Legal', 'Privacy Policy', 'Status'];
-
 
   return (
     <AppBar position="static" sx={{ backgroundColor: 'secondary.main', color: '#fff' }}>
