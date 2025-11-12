@@ -3,11 +3,10 @@ import { HomeImages } from '@/const';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "@/styles/slider.css";
+import "@/themes/styles/slider.scss";
+import '@/themes/styles/global.scss'
 
 export default function LandingPart1() {
-
-  const flexBoxStyle = { display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', gap: 4 };
 
   return (
     <Box sx={{ backgroundColor: 'neutral.silver', py: { xs: 4, md: 8 } }}>
@@ -24,12 +23,8 @@ export default function LandingPart1() {
         >
           {/* Slide 1 */}
           <Box>
-            <Box sx={ flexBoxStyle }>
-              <Stack
-                flex={1}
-                spacing={4}
-                alignItems="flex-start"
-              >
+            <Box className ="flex-box-slider">
+              <Stack flex={1} spacing={4} alignItems="flex-start">
                 <Typography variant="h1" color="neutral.grey_dark">
                   Lessons and insights <br />
                   <Box component="span" color="primary.main">
@@ -52,12 +47,8 @@ export default function LandingPart1() {
 
           {/* Slide 2 */}
           <Box>
-            <Box sx={ flexBoxStyle }>
-              <Stack
-                flex={1}
-                spacing={4}
-                alignItems="flex-start"
-              >
+            <Box className ="flex-box-slider">
+              <Stack flex={1} spacing={4} alignItems="flex-start">
                 <Typography variant="h1" color="neutral.grey_dark">
                   Lessons and insights <br />
                   <Box component="span" color="primary.main">
@@ -80,12 +71,8 @@ export default function LandingPart1() {
 
           {/* Slide 3 */}
           <Box>
-            <Box sx={ flexBoxStyle }>
-              <Stack
-                flex={1}
-                spacing={4}
-                alignItems="flex-start"
-              >
+            <Box className ="flex-box-slider">
+              <Stack flex={1} spacing={4} alignItems="flex-start">
                 <Typography variant="h1" color="neutral.grey_dark">
                   Lessons and insights <br />
                   <Box component="span" color="primary.main">

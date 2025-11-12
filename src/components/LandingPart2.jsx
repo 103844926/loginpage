@@ -1,6 +1,6 @@
 import { Box, Button, Typography, Container, Grid, Stack } from '@mui/material'
 import { HomeImages } from '@/const';
-
+import '@/themes/styles/global.scss'
 
 export default function LandingPart2() {
     
@@ -21,12 +21,7 @@ const clients = [
                     <Grid
                         container
                         spacing={1}
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            textAlign: 'center',
-                        }}
+                        className="column-center"
                     >
                         <Typography variant="h2" color="neutral.grey_dark">
                             Our Clients
@@ -55,18 +50,8 @@ const clients = [
             </Box>
 
             <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 } }}>
-                <Container maxWidth="lg">
-                    <Grid
-                        container
-                        spacing={1}
-                        sx={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            textAlign: 'center',
-                            mb: 4,
-                        }}
-                    >
+                <Container maxWidth="lg" className="column-center">
+                    <Grid container spacing={1} className="column-center" >
                         <Typography variant="h2" color="neutral.grey_dark" >
                             Manage your entire community <br /> in a single system
                         </Typography>
@@ -75,18 +60,9 @@ const clients = [
                         </Typography>
                     </Grid>
 
-                    <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
+                    <Grid container className="row-center" >
                         <Grid item xs={12} sm={6} md={3.5}>
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    maxWidth: 300,
-                                    mx: 'auto',
-                                }}
-                            >
+                            <Box className="small-column-center">
                                 <img src={HomeImages.landicon1} alt="Icon1" style={{ width: '60px', height: '60px' }} />
                                 <Typography variant="h3" color="neutral.grey_dark" >
                                     Membership Organizations
@@ -98,16 +74,7 @@ const clients = [
                         </Grid>
 
                         <Grid item xs={12} sm={6} md={3.5}>
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    maxWidth: 300,
-                                    mx: 'auto',
-                                }}
-                            >
+                            <Box className="small-column-center">
                                 <img src={HomeImages.landicon2} alt="Icon2" style={{ width: '60px', height: '60px' }} />
                                 <Typography variant="h3" color="neutral.grey_dark" >
                                     National Associations
@@ -119,16 +86,7 @@ const clients = [
                         </Grid>
 
                         <Grid item xs={12} sm={6} md={3.5}>
-                            <Box
-                                sx={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    alignItems: 'center',
-                                    textAlign: 'center',
-                                    maxWidth: 300,
-                                    mx: 'auto',
-                                }}
-                            >
+                            <Box className="small-column-center">
                                 <img src={HomeImages.landicon3} alt="Icon3" style={{ width: '60px', height: '60px' }} />
                                 <Typography variant="h3" color="neutral.grey_dark" >
                                     Clubs And Groups
