@@ -1,0 +1,37 @@
+/* Slider Styles - Converted from MUI styled component */
+
+/* Previous and Next arrows */
+.slick-prev:before,
+.slick-next:before {
+  color: #28cb8b;
+  font-size: 30px;
+}
+
+/* Dots container */
+.slick-dots {
+  bottom: -40px;
+}
+
+/* Dots button styling */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #28cb8b;
+  opacity: 0.5;
+}
+
+/* Active dot styling */
+.slick-dots li.slick-active button:before {
+  color: #28cb8b;
+  opacity: 1;
+}
+
+/* Previous arrow positioning */
+.slick-prev {
+  left: -40px;
+  z-index: 1;
+}
+
+/* Next arrow positioning */
+.slick-next {
+  right: -40px;
+}

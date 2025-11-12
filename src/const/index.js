@@ -1,1 +1,1 @@
-export * from './image.const';
+export { CommonImages, HeaderImages, FooterImages, HomeImages } from './image.const.js';

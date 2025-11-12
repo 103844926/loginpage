@@ -1,10 +1,6 @@
 // src/components/index.js
-import Footer from './Footer';
-import Header from './Header';
-import LandingPart1 from './LandingPart1';
-import LandingPart2 from './LandingPart2';
-
-export { LandingPart1 };
-export { LandingPart2 };
-export { Header };
-export { Footer };
+export { default as Header } from './Header';
+export { default as Footer } from './Footer';
+export { default as LandingPart1 } from './LandingPart1';
+export { default as LandingPart2 } from './LandingPart2';
+export { default as LandingPart3 } from './LandingPart3';

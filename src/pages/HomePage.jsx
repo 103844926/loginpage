@@ -1,9 +1,6 @@
 // src/pages/HomePage.jsx
 import { Box, Button, Typography, Container, Grid } from '@mui/material'
-import * as Components from '../components';
-import { Images } from '../const';
-import { StyledSlider } from '../themes';
-import Slider from "react-slick";
+import { Header, Footer, LandingPart1, LandingPart2, LandingPart3 } from '@/components';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -11,13 +8,15 @@ export default function HomePage() {
 
   return (
     <Box>
-      <Components.Header />
+      <Header />
       
-      <Components.LandingPart1 />
+      <LandingPart1 />
 
-      <Components.LandingPart2 />
+      <LandingPart2 />
 
-      <Components.Footer />
+      <LandingPart3 />
+
+      <Footer />
     </Box>
   )
 }

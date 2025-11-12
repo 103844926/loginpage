@@ -1,12 +1,8 @@
 // src/components/Footer.js
 import { useState } from 'react';
-import { AppBar, Toolbar, Button, TextField, Box, Typography, InputAdornment, IconButton, Grid } from '@mui/material';
-import { Images } from '../const';
-import SendIcon from '@mui/icons-material/Send';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
+import { AppBar, Toolbar, Button, TextField, Box, Typography, InputAdornment, IconButton, Grid, Stack } from '@mui/material';
+import { FooterImages } from '@/const';
+import { Send, Twitter, YouTube, Instagram, Facebook } from '@mui/icons-material';
 
 export default function Footer() {
   const [email, setEmail] = useState('');
@@ -15,8 +11,9 @@ export default function Footer() {
     console.log('Email Sent!!');
   };
 
-  const CompanyItems = ['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials'];
-  const SupportItems = ['Help Center', 'Term of Services', 'Legal', 'Privacy Policy', 'Status'];
+  const COMPANY_ITEMS = ['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials'];
+  const SUPPORT_ITEMS = ['Help Center', 'Term of Services', 'Legal', 'Privacy Policy', 'Status'];
+
 
   return (
     <AppBar position="static" sx={{ backgroundColor: 'secondary.main', color: '#fff' }}>
@@ -34,58 +31,54 @@ export default function Footer() {
           {/* Logo & Social */}
           <Grid item xs={12} md={3}>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: { xs: 1, sm: 2, md: 3 } }}>
-              <img src={Images.logoWhite} alt="Company Logo" style={{ width: 180, height: 'auto' }} />
-              <Typography
-                variant="body2"
-                sx={{ lineHeight: 1.8, fontSize: { xs: '0.7rem', sm: '0.8rem', md: '0.9rem' } }}
-              >
+              <img src={FooterImages.footlogo} alt="Company Logo" style={{ width: 180, height: 'auto' }} />
+              <Typography variant="body3_r">
                 Copyright © 2020 Nexcent ltd. <br /> All rights reserved
               </Typography>
               <Box sx={{ display: 'flex', gap: { xs: 1, sm: 2 } }}>
-                <IconButton color="primary"><InstagramIcon fontSize="medium" /></IconButton>
-                <IconButton color="primary"><FacebookIcon fontSize="medium" /></IconButton>
-                <IconButton color="primary"><TwitterIcon fontSize="medium" /></IconButton>
-                <IconButton color="primary"><YouTubeIcon fontSize="medium" /></IconButton>
+                <IconButton color="primary"><Instagram fontSize="medium" /></IconButton>
+                <IconButton color="primary"><Facebook fontSize="medium" /></IconButton>
+                <IconButton color="primary"><Twitter fontSize="medium" /></IconButton>
+                <IconButton color="primary"><YouTube fontSize="medium" /></IconButton>
               </Box>
             </Box>
           </Grid>
 
           {/* Company Links */}
           <Grid item xs={10} sm={6} md={2}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Typography variant="body2" sx={{ fontWeight: 700, mb: 1 }}>Company</Typography>
-              {CompanyItems.map((label, idx) => (
+            <Stack spacing={1}>
+              <Typography variant="h4">Company</Typography>
+              {COMPANY_ITEMS.map((label, idx) => (
                 <Button
                   key={idx}
                   variant="text"
                   sx={{ color: '#fff', justifyContent: 'flex-start', padding: 0, minWidth: 0 }}
                 >
-                  <Typography variant="body2">{label}</Typography>
+                  <Typography variant="body3_r">{label}</Typography>
                 </Button>
               ))}
-            </Box>
+            </Stack>
           </Grid>
 
-          {/* Support Links */}
           <Grid item xs={10} sm={6} md={2}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Typography variant="body2" sx={{ fontWeight: 700, mb: 1 }}>Support</Typography>
-              {SupportItems.map((label, idx) => (
+            <Stack spacing={1}>
+              <Typography variant="h4">Support</Typography>
+              {SUPPORT_ITEMS.map((label, idx) => (
                 <Button
                   key={idx}
                   variant="text"
                   sx={{ color: '#fff', justifyContent: 'flex-start', padding: 0, minWidth: 0 }}
                 >
-                  <Typography variant="body2">{label}</Typography>
+                  <Typography variant="body3_r">{label}</Typography>
                 </Button>
               ))}
-            </Box>
+            </Stack>
           </Grid>
 
           {/* Stay Up to Date */}
           <Grid item xs={12} sm={6} md={3}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-              <Typography variant="body2" sx={{ fontWeight: 700 }}>Stay up to date</Typography>
+            <Stack direction="column" spacing={2}>
+              <Typography variant="h4">Stay up to date</Typography>
               <TextField
                 fullWidth
                 label="Your email address"
@@ -96,15 +89,14 @@ export default function Footer() {
                   endAdornment: (
                     <InputAdornment position="end">
                       <IconButton color="secondary" onClick={handleSend}>
-                        <SendIcon />
+                        <Send />
                       </IconButton>
                     </InputAdornment>
                   ),
                 }}
               />
-            </Box>
+            </Stack>
           </Grid>
-
         </Grid>
       </Toolbar>
     </AppBar>

@@ -1,49 +1,51 @@
-// src/components/Header.js
+// src/components/Header.jsx
 import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
+import { HeaderImages } from '@/const';
+import { Menu, Close } from '@mui/icons-material';
 import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import { Images } from '../const';
+import { useTheme } from '@mui/material/styles';
 
 export default function Header() {
+  const theme = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const activePage = location.pathname.replace('/', '') || 'home';
+  const activePage = location.pathname.replace('') || 'home';
 
-  const menuItems = [
-    { label: 'Home', path: 'home' },
-    { label: 'Service', path: 'service' },
-    { label: 'Feature', path: 'feature' },
-    { label: 'Product', path: 'product' },
-    { label: 'Testimonial', path: 'testimonial' },
-    { label: 'FAQ', path: 'faq' },
+  const MENU_ITEMS = [
+    { label: 'Home', path: '/home' },
+    { label: 'Service', path: '/service' },
+    { label: 'Feature', path: '/feature' },
+    { label: 'Product', path: '/product' },
+    { label: 'Testimonial', path: '/testimonial' },
+    { label: 'FAQ', path: '/faq' },
   ];
 
   const handleMenuClick = (path) => {
-    navigate(`/${path}`);
+    navigate(`${path}`);
     setMobileMenuOpen(false);
   };
 
+
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: (theme) => theme.palette.neutral.silver }}>
+      <AppBar position="static" sx={{ backgroundColor: theme.palette.neutral.silver }}>
         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', px: { xs: 2, md: 12 } }}>
-          <img src={Images.logo} alt="Company Logo" style={{ width: 120, height: 'auto' }} />
+          <img src={HeaderImages.headlogo} alt="Company Logo" style={{ width: 120, height: 'auto' }} />
 
           {/* Desktop Menu */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
-            {menuItems.map((item) => (
+            {MENU_ITEMS.map((item) => (
               <Button
                 key={item.path}
                 variant="text"
                 color="secondary"
-                onClick={() => navigate(`/${item.path}`)}
-                sx={{ mr: 2, fontWeight: activePage === item.path ? 700 : 500 }}
+                onClick={() => navigate(`${item.path}`)}
+                sx={{ fontWeight: activePage === item.path ?  500 : 400 }}
               >
-                {item.label}
+                <Typography variant="body2_r">{item.label}</Typography>
               </Button>
             ))}
           </Box>
@@ -64,7 +66,7 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(true)}
             color="secondary"
           >
-            <MenuIcon />
+            <Menu />
           </IconButton>
         </Toolbar>
       </AppBar>
@@ -81,12 +83,12 @@ export default function Header() {
       >
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
           <IconButton onClick={() => setMobileMenuOpen(false)}>
-            <CloseIcon />
+            <Close />
           </IconButton>
         </Box>
 
         <List>
-          {menuItems.map((item) => (
+          {MENU_ITEMS.map((item) => (
             <ListItem key={item.path} disablePadding>
               <ListItemButton
                 onClick={() => handleMenuClick(item.path)}
@@ -95,7 +97,7 @@ export default function Header() {
                 <ListItemText
                   primary={item.label}
                   primaryTypographyProps={{
-                    fontWeight: activePage === item.path ? 700 : 500
+                    fontWeight: activePage === item.path ? 500 : 400
                   }}
                 />
               </ListItemButton>
