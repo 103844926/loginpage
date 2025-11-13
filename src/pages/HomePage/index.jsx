@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 export default function HomePage() {
 
   return (
-    <Box>
+    <Box >
       <Header />
       
       <Landing.LandingPart1 />

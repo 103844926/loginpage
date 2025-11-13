@@ -5,7 +5,7 @@ import '@/themes/styles/global.scss'
 
 export function LandingPart7() {
     return (
-        <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 } }}>
+        <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 }, px: { xs: 4, md: 20 } }}>
             <Container maxWidth="lg" className="column-center">
                 <Grid container spacing={1} className="column-center" >
                     <Typography variant="h2" color="neutral.grey_dark" >
@@ -16,8 +16,8 @@ export function LandingPart7() {
                     </Typography>
                 </Grid>
 
-                <Stack className="Stack-container">
-                    <Box className="small-column-center" sx={{ flex: 1 }}>
+                <Stack className="stack-container">
+                    <Box className="small-column-center" sx={{ flex: 1, maxWidth: "350px" }}>
                         <img src={HomeImages.landillu4} alt="Illu4" />
                         <Box backgroundColor="neutral.silver" className="overlay-content">
                             <Typography variant="h4" color="neutral.grey" >
@@ -30,7 +30,7 @@ export function LandingPart7() {
                         </Box>
                     </Box>
 
-                    <Box className="small-column-center" sx={{ flex: 1 }}>
+                    <Box className="small-column-center" sx={{ flex: 1, maxWidth: "350px" }}>
                         <img src={HomeImages.landillu5} alt="Illu5" />
                         <Box backgroundColor="neutral.silver" className="overlay-content">
                             <Typography variant="h4" color="neutral.grey" >
@@ -43,7 +43,7 @@ export function LandingPart7() {
                         </Box>
                     </Box>
 
-                    <Box className="small-column-center" sx={{ flex: 1 }}>
+                    <Box className="small-column-center" sx={{ flex: 1, maxWidth: "350px" }}>
                         <img src={HomeImages.landillu6} alt="Illu6" />
                         <Box backgroundColor="neutral.silver" className="overlay-content" >
                             <Typography variant="h4" color="neutral.grey" >
