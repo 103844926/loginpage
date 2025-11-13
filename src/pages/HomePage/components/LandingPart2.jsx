@@ -30,14 +30,7 @@ export function LandingPart2() {
                         </Typography>
                     </Grid>
 
-                    <Stack
-                        direction="row"
-                        flexWrap="wrap"     
-                        justifyContent="center"
-                        alignItems="center"
-                        mt={4}
-                        gap={13}            
-                    >
+                    <Stack className="Stack-container">
                         {clients.map((client, idx) => (
                             <Box key={idx} sx={{ display: 'flex', justifyContent: 'center' }}>
                                 <img src={client} alt={`Client${idx + 1}`} />

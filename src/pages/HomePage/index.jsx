@@ -25,6 +25,8 @@ export default function HomePage() {
 
       <Landing.LandingPart7 />
 
+      <Landing.LandingPart8 />
+
       <Footer />
     </Box>
   )
