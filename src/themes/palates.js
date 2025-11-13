@@ -1,7 +1,7 @@
 const palette= {
     mode: 'light',
     primary: {
-      main: '#28cb8b',
+      main: '#4CAF4F',
     },
     
     secondary: {
