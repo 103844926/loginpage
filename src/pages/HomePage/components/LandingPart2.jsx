@@ -1,5 +1,6 @@
 import { Box, Button, Typography, Container, Grid, Stack } from '@mui/material'
 import { HomeImages } from '@/const';
+import { Landing2 } from '@/components/Icons';
 import '@/themes/styles/global.scss'
 
 const clients = [
@@ -13,9 +14,13 @@ const clients = [
 ];
 
 export function LandingPart2() {
+    const shadowbox ={
+        boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.08)'
+    };
+
     return (
         <>
-            <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 } }}>
+            <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 }, px: { xs: 4, md: 20 } }}>
                 <Container maxWidth="lg">
                     <Grid
                         container
@@ -30,7 +35,7 @@ export function LandingPart2() {
                         </Typography>
                     </Grid>
 
-                    <Stack className="Stack-container">
+                    <Stack className="stack-container">
                         {clients.map((client, idx) => (
                             <Box key={idx} sx={{ display: 'flex', justifyContent: 'center' }}>
                                 <img src={client} alt={`Client${idx + 1}`} />
@@ -40,7 +45,7 @@ export function LandingPart2() {
                 </Container>
             </Box>
 
-            <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 } }}>
+            <Box sx={{ backgroundColor: 'neutral.white', py: { xs: 4, md: 8 }, px: { xs: 4, md: 20 } }}>
                 <Container maxWidth="lg" className="column-center">
                     <Grid container spacing={1} className="column-center" >
                         <Typography variant="h2" color="neutral.grey_dark" >
@@ -53,8 +58,8 @@ export function LandingPart2() {
 
                     <Grid container className="row-center" >
                         <Grid item xs={12} sm={6} md={4}>
-                            <Box className="small-column-center">
-                                <img src={HomeImages.landicon1} alt="Icon1" style={{ width: '60px', height: '60px' }} />
+                            <Box className="small-column-center" sx={shadowbox}>
+                                    <Landing2.LandingMember />
                                 <Typography variant="h3" color="neutral.grey_dark" >
                                     Membership Organizations
                                 </Typography>
@@ -65,8 +70,8 @@ export function LandingPart2() {
                         </Grid>
 
                         <Grid item xs={12} sm={6} md={4}>
-                            <Box className="small-column-center">
-                                <img src={HomeImages.landicon2} alt="Icon2" style={{ width: '60px', height: '60px' }} />
+                            <Box className="small-column-center" sx={shadowbox}>
+                                <Landing2.LandingAssociation />
                                 <Typography variant="h3" color="neutral.grey_dark" >
                                     National Associations
                                 </Typography>
@@ -77,8 +82,8 @@ export function LandingPart2() {
                         </Grid>
 
                         <Grid item xs={12} sm={6} md={4}>
-                            <Box className="small-column-center">
-                                <img src={HomeImages.landicon3} alt="Icon3" style={{ width: '60px', height: '60px' }} />
+                            <Box className="small-column-center" sx={shadowbox}>
+                                <Landing2.LandingClubGroup />
                                 <Typography variant="h3" color="neutral.grey_dark" >
                                     Clubs And Groups
                                 </Typography>
