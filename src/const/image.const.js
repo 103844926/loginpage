@@ -37,11 +37,6 @@ export const HomeImages = {
     landlogo5: '/images/img-landing-client5.png',
     landlogo6: '/images/img-landing-client6.png',
 
-    /// Icons
-    landicon1: '/images/img-landing-icon1.png',
-    landicon2: '/images/img-landing-icon2.png',
-    landicon3: '/images/img-landing-icon3.png',
-
     /// Avatar
     TimSmith: '/images/img-landing-avatim.png'
 };

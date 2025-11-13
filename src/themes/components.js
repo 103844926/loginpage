@@ -5,7 +5,7 @@ const components = {
   MuiButton: {
     styleOverrides: {
       root: {
-        borderRadius: 12,
+        borderRadius: 4,
         padding: '8px 24px',
         textTransform: 'none',
         fontWeight: 600,
