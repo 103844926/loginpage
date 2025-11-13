@@ -17,7 +17,7 @@ export function LandingPart3() {
                     <Typography variant="body3_r" color="neutral.grey_dark" >
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet justo ipsum. Sed accumsan quam vitae est varius fringilla. Pellentesque placerat vestibulum lorem sed porta. Nullam mattis tristique iaculis. Nullam pulvinar sit amet risus pretium auctor. Etiam quis massa pulvinar, aliquam quam vitae, tempus sem. Donec elementum pulvinar odio.                  
                     </Typography>
-                    <Button variant="contained" color="primary" sx={{ mr: 4 }}>
+                    <Button variant="contained" color="primary" size="medium">
                         Learn More
                     </Button>
                 </Stack>

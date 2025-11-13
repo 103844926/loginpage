@@ -12,17 +12,17 @@ const components = {
       },
 
       sizeSmall: {
-          padding: '4px 12px',
-          fontSize: '0.75rem',
-        },
-        sizeMedium: {
-          padding: '6px 16px',
-          fontSize: '0.875rem',
-        },
-        sizeLarge: {
-          padding: '6px 16px',
-          fontSize: '1rem',
-        },
+        padding: '8px 24px',
+        fontSize: '1rem',
+      },
+      sizeMedium: {
+        padding: '14px 32px',
+        fontSize: '1rem',
+      },
+      sizeLarge: {
+        padding: '16px 32px',
+        fontSize: '1rem',
+      },
 
       containedPrimary: (theme) => ({
         backgroundColor: palette.primary.main,       // default
@@ -92,45 +92,45 @@ const components = {
   },
 
   MuiTextField: {
-  styleOverrides: {
-    root: {
-      '& .MuiInputLabel-root': {
-        color: palette.neutral.white,
-      },
-      '& .MuiInputLabel-root.Mui-focused': {
-        color: 'transparent',
-      },
-      '& .MuiOutlinedInput-root': {
-        backgroundColor: palette.neutral.grey_light, // Move background here
-        color: palette.neutral.black,
-        '& fieldset': {
-          borderColor: 'transparent',
-          // Remove backgroundColor from fieldset
+    styleOverrides: {
+      root: {
+        '& .MuiInputLabel-root': {
+          color: palette.neutral.white,
         },
-        '&:hover fieldset': {
-          borderColor: 'transparent',
+        '& .MuiInputLabel-root.Mui-focused': {
+          color: 'transparent',
         },
-        '&.Mui-focused fieldset': {
-          borderColor: 'transparent',
-        },
-        '& input': { // Explicitly set input text color
+        '& .MuiOutlinedInput-root': {
+          backgroundColor: palette.neutral.grey_light, // Move background here
           color: palette.neutral.black,
+          '& fieldset': {
+            borderColor: 'transparent',
+            // Remove backgroundColor from fieldset
+          },
+          '&:hover fieldset': {
+            borderColor: 'transparent',
+          },
+          '&.Mui-focused fieldset': {
+            borderColor: 'transparent',
+          },
+          '& input': { // Explicitly set input text color
+            color: palette.neutral.black,
+          },
         },
       },
     },
   },
-},
-MuiIconButton: {
-      styleOverrides: {
-        root:{
-          borderRadius: '50%',
-          padding: 6,
-        },
+  MuiIconButton: {
+    styleOverrides: {
+      root: {
+        borderRadius: '50%',
+        padding: 6,
+      },
 
-        colorPrimary: (theme) => ({
-          
-          backgroundColor: palette.neutral.grey,       // default
-           color: '#fff',
+      colorPrimary: (theme) => ({
+
+        backgroundColor: palette.neutral.grey,       // default
+        color: '#fff',
         '&:hover': {
           backgroundColor: palette.color_shade.s2,     // hover
         },
@@ -145,9 +145,9 @@ MuiIconButton: {
           backgroundColor: palette.neutral.grey_light,      // disabled
           color: palette.neutral.grey_dark,
         },
-        }),
+      }),
 
-        colorSecondary: (theme) => ({
+      colorSecondary: (theme) => ({
         color: palette.primary,
         '&:hover': {
           backgroundColor: palette.color_tint.t4,
@@ -164,8 +164,8 @@ MuiIconButton: {
           color: palette.neutral.grey_dark,
         },
       }),
-      },
     },
+  },
 };
 
 export default components;

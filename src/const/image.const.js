@@ -7,14 +7,14 @@ export const CommonImages = {
 
 /// Header
 export const HeaderImages = {
-    headlogo: '/images/img-headlogo.svg',    
+    headlogo: '/images/img-header-logo.svg',    
 
 };
 
 
 /// Footer
 export const FooterImages = {
-    footlogo: '/images/img-footlogo.svg',
+    footlogo: '/images/img-footer-logo.svg',
 
 };
 
