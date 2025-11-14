@@ -20,18 +20,30 @@ export function Footer() {
     },
   };
 
-  const footerLink = {
+const footerStyle = {
+  color: '#fff',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  minWidth: { sm: '140px', md: '160px' },
+  px: 0,
+  py: { xs: 0.5, md: 1 },
+
+  // button-specific styles
+  '& .footer-link': {
     color: '#fff',
-    backgroundColor: 'transparent',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     px: 0,
     py: { xs: 0.5, md: 1 },
+    backgroundColor: 'transparent',
     '&:hover': {
       backgroundColor: 'transparent',
     },
-  };
+  },
+};
+
 
   const [email, setEmail] = useState('');
 
@@ -60,27 +72,20 @@ export function Footer() {
           {/* Left Side: Logo & Social */}
           <Box sx={{ flex: "3", minWidth: { md: '200px', lg: '250px' } }}>
             <Stack spacing={{ xs: 3, sm: 4, lg: 5 }}>
-              <img
-                src={FooterImages.footlogo}
-                alt="Company Logo"
+
+              <img src={FooterImages.footlogo} alt="Company Logo"
                 style={{ width: '200px', height: 'auto' }}
               />
+
               <Typography variant="body3_r" lineHeight={1.6}>
                 Copyright © 2020 Nexcent ltd. <br /> All rights reserved
               </Typography>
+
               <Box sx={{ display: 'flex', gap: { xs: 1, sm: 1.5, lg: 2 } }}>
-                <IconButton sx={footerIcon} >
-                  <Instagram fontSize="medium" />
-                </IconButton>
-                <IconButton sx={footerIcon} >
-                  <Facebook fontSize="medium" />
-                </IconButton>
-                <IconButton sx={footerIcon} >
-                  <Twitter fontSize="medium" />
-                </IconButton>
-                <IconButton sx={footerIcon} >
-                  <YouTube fontSize="medium" />
-                </IconButton>
+                <IconButton sx={footerIcon} > <Instagram fontSize="medium" /> </IconButton>
+                <IconButton sx={footerIcon} > <Facebook fontSize="medium" /> </IconButton>
+                <IconButton sx={footerIcon} > <Twitter fontSize="medium" /> </IconButton>
+                <IconButton sx={footerIcon} > <YouTube fontSize="medium" /> </IconButton>
               </Box>
             </Stack>
           </Box>
@@ -93,12 +98,7 @@ export function Footer() {
             justifyContent: { md: 'flex-end' }
           }}>
             {/* Company Links */}
-            <Box sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              minWidth: { sm: '140px', md: '160px' }
-            }}>
+            <Box sx={ footerStyle }>
               <Typography variant="h4" sx={{ paddingBottom: { xs: '16px', md: '20px' } }}>
                 Company
               </Typography>
@@ -107,7 +107,7 @@ export function Footer() {
                   <Button
                     key={idx}
                     variant="text"
-                    sx={footerLink}
+                    className="footer-link"
                   >
                     <Typography variant="body3_r">{label}</Typography>
                   </Button>
@@ -116,12 +116,7 @@ export function Footer() {
             </Box>
 
             {/* Support Links */}
-            <Box sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start',
-              minWidth: { sm: '140px', md: '160px' }
-            }}>
+            <Box sx={ footerStyle }>
               <Typography variant="h4" sx={{ paddingBottom: { xs: '16px', md: '20px' } }}>
                 Support
               </Typography>
@@ -130,7 +125,7 @@ export function Footer() {
                   <Button
                     key={idx}
                     variant="text"
-                    sx={footerLink}
+                    className="footer-link"
                   >
                     <Typography variant="body3_r">{label}</Typography>
                   </Button>

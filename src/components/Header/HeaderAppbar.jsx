@@ -18,7 +18,7 @@ export function HeaderAppbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const activePage = location.pathname.replace('') || '/home';
+  const activePage = location.pathname || '/home';
 
   return (
     <AppBar 
@@ -39,15 +39,7 @@ export function HeaderAppbar() {
       >
         {/* Logo - scales with screen size */}
         <Box sx={{ flexShrink: 0 }}>
-          <img 
-            src={HeaderImages.headlogo} 
-            alt="Company Logo" 
-            style={{ 
-              width: 'clamp(100px, 15vw, 120px)', 
-              height: 'auto',
-              display: 'block'
-            }} 
-          />
+          <img src={HeaderImages.headlogo} alt="Company Logo"  />
         </Box>
 
         {/* Desktop Menu - flexible spacing */}
@@ -66,9 +58,9 @@ export function HeaderAppbar() {
               key={item.path}
               variant="text"
               color="secondary"
-              onClick={() => navigate(`${item.path}`)}
+              onClick={() => navigate(item.path)}
               sx={{ 
-                fontWeight: activePage === item.path ? 500 : 400,
+                fontWeight: activePage === item.path ? 600 : 400,
                 px: { md: 1, lg: 1.5, xl: 2 },
                 minWidth: 'auto',
                 whiteSpace: 'nowrap'
@@ -93,9 +85,7 @@ export function HeaderAppbar() {
             variant="text" 
             color="primary" 
             onClick={() => navigate('/login')}
-            sx={{
-              px: { md: 1.5, lg: 2, xl: 2.5 }
-            }}
+            sx={{ px: { md: 1.5, lg: 2, xl: 2.5 }}}
           >
             Login
           </Button>
@@ -103,10 +93,7 @@ export function HeaderAppbar() {
             variant="contained" 
             onClick={() => navigate('/login')} 
             color="primary"
-            sx={{
-              padding: "0px 15px",
-              px: { md: 2, lg: 2.5, xl: 3 },
-            }}
+            sx={{px: { md: 2, lg: 2.5, xl: 3 }}}
           >
             Sign Up
           </Button>

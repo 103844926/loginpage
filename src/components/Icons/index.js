@@ -20,5 +20,5 @@ export const CommonIcons = {
     ClubIcon: ClubIcon,
     MemberIcon: MemberIcon,
     PaymentIcon: PaymentIcon,
-    emailicon: EmailIcon,
+    EmailIcon: EmailIcon,
 };
