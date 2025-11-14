@@ -77,7 +77,7 @@ export function HeaderAppbar() {
         <Box 
           sx={{ 
             display: { xs: 'none', md: 'flex' },
-            gap: { md: 1, lg: 1.5, xl: 2 },
+            gap: "14px",
             flexShrink: 0
           }}
         >
@@ -85,7 +85,7 @@ export function HeaderAppbar() {
             variant="text" 
             color="primary" 
             onClick={() => navigate('/login')}
-            sx={{ px: { md: 1.5, lg: 2, xl: 2.5 }}}
+            sx={{ padding: '10px 20px', borderRadius: "6px"}}
           >
             Login
           </Button>
@@ -93,7 +93,7 @@ export function HeaderAppbar() {
             variant="contained" 
             onClick={() => navigate('/login')} 
             color="primary"
-            sx={{px: { md: 2, lg: 2.5, xl: 3 }}}
+            sx={{padding: '10px 20px', borderRadius: "6px"}}
           >
             Sign Up
           </Button>

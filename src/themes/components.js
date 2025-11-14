@@ -2,6 +2,15 @@ import { border, color } from "@mui/system";
 import palette from './palates';
 
 const components = {
+  MuiContainer: {
+    styleOverrides: {
+      root: {
+        paddingLeft: '144px',
+        paddingRight: '144px',
+      },
+    },
+  },
+
   MuiButton: {
     styleOverrides: {
       root: {
@@ -120,6 +129,7 @@ const components = {
       },
     },
   },
+  
   MuiIconButton: {
     styleOverrides: {
       root: {
