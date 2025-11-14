@@ -1,17 +1,16 @@
 .row-center {
-    display: flex !important;
+    display: flex;
     flex-direction: row !important;
-    flex-wrap: wrap !important;
-    gap: 100px !important;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
 
 .column-center {
-    display: flex !important;
+    display: flex;
     flex-direction: column !important;
-    flex-wrap: wrap !important;
-    gap: 24px !important;
+    flex-wrap: wrap;
+    gap: 26px;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -20,10 +19,10 @@
 }
 
 .column-typography {
-    display: flex !important;
+    display: flex;
     flex-direction: column !important;
-    flex-wrap: wrap !important;
-    gap: 16px !important;
+    flex-wrap: wrap;
+    gap: 16px;
     align-items: flex-start;
 }
 
@@ -72,34 +71,13 @@
     }
 }
 
-.social-icon {
-    color: #fff !important;
-    background-color: rgba(255, 255, 255, 0.1) !important
-}
-
-.social-icon:hover {
-    background-color: rgba(255, 255, 255, 0.2) !important
-}
-
-.footer-link {
-    color: #fff !important; 
-    background-color: transparent !important; 
-    justify-content: flex-start !important; 
-    padding: 12px 0px !important;
-}
-
-.footer-link:hover {
-    background-color: 'transparent' !important;
-}
-
-.email-type-field {
-    color: #f5f7fa !important;
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    border-radius: 8px !important;
-}
-
-.email-type-label {
-    color: #D9DBE1 !important;
+.stack-row-container {
+    display: flex;
+    flex-direction: row !important;
+    flex-wrap: wrap ;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
 }
 
 .overlay-content {
@@ -120,12 +98,3 @@
     ;
 }
 
-.stack-container {
-    display: flex;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
-    align-items: center;
-    margin-top: 32px;
-    gap: 20px;
-}

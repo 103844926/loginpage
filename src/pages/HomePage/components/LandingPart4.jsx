@@ -1,10 +1,14 @@
 import { Box, Button, Typography, Stack, Grid } from '@mui/material'
-import { CommonIcons } from '@/components/Icons';
+import { CommonIcons } from '@/components/icons';
 import { HomeImages } from '@/const';
-import '@/themes/styles/global.scss';
+;
 
 export function LandingPart4() {
+    const gridIcon = {width: 48, height: 48, color: 'primary.main' };
+
     return (
+        
+        
         <Box sx={{ backgroundColor: 'neutral.silver', py: { xs: 4, md: 8 }, px: { xs: 4, md: 20 } }}>
             <Box className="flex-box-slider">
                 <Stack flex={2} spacing={4} alignItems="flex-start">
@@ -24,7 +28,7 @@ export function LandingPart4() {
                 <Grid flex={4} container rowSpacing={4} columnSpacing={12} sx={{ flexBasis: '100%', maxWidth: 500, flexWrap: 'wrap',}}>
                     <Grid item xs={6}>
                         <Box display="flex" alignItems="center" gap={2}>
-                            <CommonIcons.MemberIcon/>
+                            <CommonIcons.MemberIcon sx={gridIcon} />
                             <Box>
                                 <Typography variant="h3" color="neutral.grey_dark">
                                     2,245,341
@@ -38,7 +42,7 @@ export function LandingPart4() {
 
                     <Grid item xs={6}>
                         <Box display="flex" alignItems="center" gap={2}>
-                            <CommonIcons.ClubIcon/>
+                            <CommonIcons.ClubIcon sx={gridIcon} />
                             <Box>
                                 <Typography variant="h3" color="neutral.grey_dark">
                                     46,328
@@ -52,7 +56,7 @@ export function LandingPart4() {
 
                     <Grid item xs={6}>
                         <Box display="flex" alignItems="center" gap={2}>
-                            <CommonIcons.BookingIcon/>
+                            <CommonIcons.BookingIcon sx={gridIcon} />
                             <Box>
                                 <Typography variant="h3" color="neutral.grey_dark">
                                     828,867
@@ -66,7 +70,7 @@ export function LandingPart4() {
 
                     <Grid item xs={6}>
                         <Box display="flex" alignItems="center" gap={2}>
-                            <CommonIcons.PaymentIcon/>
+                            <CommonIcons.PaymentIcon sx={gridIcon} />
                             <Box>
                                 <Typography variant="h3" color="neutral.grey_dark">
                                     1,926,436

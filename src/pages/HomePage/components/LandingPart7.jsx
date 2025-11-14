@@ -1,7 +1,7 @@
 import { Box, Button, Typography, Container, Grid, Stack } from '@mui/material'
 import { ArrowRightAlt } from '@mui/icons-material';
 import { HomeImages } from '@/const';
-import '@/themes/styles/global.scss'
+
 
 export function LandingPart7() {
     return (
@@ -11,12 +11,12 @@ export function LandingPart7() {
                     <Typography variant="h2" color="neutral.grey_dark" >
                         Caring is the new marketing
                     </Typography>
-                    <Typography variant="body2_r" color="neutral.grey_dark" sx={{ maxWidth: "720px" }}>
+                    <Typography variant="body2_r" color="neutral.grey" sx={{ maxWidth: "720px" }}>
                         The Nexcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.
                     </Typography>
                 </Grid>
 
-                <Stack className="stack-container">
+                <Stack className="stack-row-container" gap ={5}>
                     <Box className="small-column-center" sx={{ flex: 1, maxWidth: "350px" }}>
                         <img src={HomeImages.landillu4} alt="Illu4" />
                         <Box backgroundColor="neutral.silver" className="overlay-content">

@@ -18,34 +18,83 @@ export function HeaderAppbar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const activePage = location.pathname.replace('') || '/home';
+  const activePage = location.pathname || '/home';
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: theme.palette.neutral.silver }}>
-      <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', px: { xs: 2, md: 12 } }}>
-        <img src={HeaderImages.headlogo} alt="Company Logo" style={{ width: 120, height: 'auto' }} />
+    <AppBar 
+      position="static" 
+      sx={{ 
+        backgroundColor: 'neutral.silver', 
+        px: { xs: 4, sm: 6, md: 8, lg: 10, xl: 12 } 
+      }}
+    >
+      <Toolbar 
+        disableGutters 
+        sx={{ 
+          display: 'flex', 
+          justifyContent: 'space-between',
+          minHeight: { xs: 64, sm: 70, md: 80 },
+          gap: { sm: 2, md: 3, lg: 4 }
+        }}
+      >
+        {/* Logo - scales with screen size */}
+        <Box sx={{ flexShrink: 0 }}>
+          <img src={HeaderImages.headlogo} alt="Company Logo"  />
+        </Box>
 
-        {/* Desktop Menu */}
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
+        {/* Desktop Menu - flexible spacing */}
+        <Box 
+          sx={{ 
+            display: { xs: 'none', md: 'flex' }, 
+            alignItems: 'center',
+            gap: { md: 0.5, lg: 1, xl: 1.5 },
+            flex: 1,
+            justifyContent: 'center',
+            maxWidth: '600px'
+          }}
+        >
           {MENU_ITEMS.map((item) => (
             <Button
               key={item.path}
               variant="text"
               color="secondary"
-              onClick={() => navigate(`${item.path}`)}
-              sx={{ fontWeight: activePage === item.path ? 500 : 400 }}
+              onClick={() => navigate(item.path)}
+              sx={{ 
+                fontWeight: activePage === item.path ? 600 : 400,
+                px: { md: 1, lg: 1.5, xl: 2 },
+                minWidth: 'auto',
+                whiteSpace: 'nowrap'
+              }}
             >
-              <Typography variant="body2_r">{item.label}</Typography>
+              <Typography variant="body2_r" >
+                {item.label}
+              </Typography>
             </Button>
           ))}
         </Box>
 
-        {/* Desktop Auth Buttons */}
-        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <Button variant="text" color="primary" onClick={() => navigate('/login')} sx={{ mr: 2 }}>
+        {/* Desktop Auth Buttons - responsive sizing */}
+        <Box 
+          sx={{ 
+            display: { xs: 'none', md: 'flex' },
+            gap: { md: 1, lg: 1.5, xl: 2 },
+            flexShrink: 0
+          }}
+        >
+          <Button 
+            variant="text" 
+            color="primary" 
+            onClick={() => navigate('/login')}
+            sx={{ px: { md: 1.5, lg: 2, xl: 2.5 }}}
+          >
             Login
           </Button>
-          <Button variant="contained" sx={{ padding: "0px 30px" }} onClick={() => navigate('/login')} color="primary">
+          <Button 
+            variant="contained" 
+            onClick={() => navigate('/login')} 
+            color="primary"
+            sx={{px: { md: 2, lg: 2.5, xl: 3 }}}
+          >
             Sign Up
           </Button>
         </Box>

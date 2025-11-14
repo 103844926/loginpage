@@ -1,5 +1,4 @@
-import { Box, Button, Typography, Stack, Grid } from '@mui/material'
-import '@/themes/styles/global.scss';
+import { Box, Button, Typography, Stack, Grid } from '@mui/material';
 import { HomeImages } from '@/const';
 import { ArrowRightAlt } from '@mui/icons-material';
 
@@ -35,7 +34,7 @@ export function LandingPart6() {
                     </Typography>
                     </Box>
 
-                    <Stack className= "stack-container" gap={4} >
+                    <Stack className= "stack-row-container" gap={4} >
                         {clients.map((client, idx) => (
                             <Box key={idx} sx={{ display: 'flex', justifyContent: 'center' }}>
                                 <img src={client} alt={`Client${idx + 1}`} />

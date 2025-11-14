@@ -1,15 +1,50 @@
 // src/components/Footer.js
 import { useState } from 'react';
+import { styled } from '@mui/material/styles';
 import { AppBar, Toolbar, Button, TextField, Box, Typography, InputAdornment, IconButton, Grid, Stack } from '@mui/material';
 import { FooterImages } from '@/const';
 import { Twitter, YouTube, Instagram, Facebook } from '@mui/icons-material';
-import { CommonIcons } from './Icons';
-import '@/themes/styles/global.scss';
+import { CommonIcons } from './icons';
+import { alignItems } from '@mui/system';
 
 const COMPANY_ITEMS = ['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials'];
 const SUPPORT_ITEMS = ['Help Center', 'Term of Services', 'Legal', 'Privacy Policy', 'Status'];
 
 export function Footer() {
+
+  const footerIcon = {
+    color: '#fff',
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    '&:hover': {
+      backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    },
+  };
+
+const footerStyle = {
+  color: '#fff',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  minWidth: { sm: '140px', md: '160px' },
+  px: 0,
+  py: { xs: 0.5, md: 1 },
+
+  // button-specific styles
+  '& .footer-link': {
+    color: '#fff',
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    px: 0,
+    py: { xs: 0.5, md: 1 },
+    backgroundColor: 'transparent',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
+  },
+};
+
+
   const [email, setEmail] = useState('');
 
   const handleSend = () => {
@@ -20,72 +55,93 @@ export function Footer() {
     <AppBar position="static" sx={{ backgroundColor: 'secondary.main', color: '#fff' }}>
       <Toolbar
         sx={{
-          py: { xs: 4, md: 8 }, px: { xs: 4, md: 20 },
+          py: { xs: 4, sm: 5, md: 6, lg: 8 },
+          px: { xs: 4, sm: 6, md: 10, lg: 15, xl: 20 },
           display: 'flex',
           alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <Grid container
-          spacing={{ xs: 4, sm: 32, md: 48 }}
-          alignItems="flex-start"
-          justifyContent="space-between">
+        <Box sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          justifyContent: 'space-between',
+          gap: { xs: 4, sm: 6, md: 8, lg: 10 },
+          width: '100%'
+        }}>
+          {/* Left Side: Logo & Social */}
+          <Box sx={{ flex: "3", minWidth: { md: '200px', lg: '250px' } }}>
+            <Stack spacing={{ xs: 3, sm: 4, lg: 5 }}>
 
-          {/* Logo & Social */}
-          <Grid item xs={12} md={3}>
-            <Stack spacing={5}>
-              <img src={FooterImages.footlogo} alt="Company Logo" />
+              <img src={FooterImages.footlogo} alt="Company Logo"
+                style={{ width: '200px', height: 'auto' }}
+              />
+
               <Typography variant="body3_r" lineHeight={1.6}>
                 Copyright © 2020 Nexcent ltd. <br /> All rights reserved
               </Typography>
-              <Box sx={{ display: 'flex', gap: { xs: 1, sm: 2 } }}>
-                <IconButton className='social-icon'><Instagram fontSize="medium" /></IconButton>
-                <IconButton className='social-icon'><Facebook fontSize="medium" /></IconButton>
-                <IconButton className='social-icon'><Twitter fontSize="medium" /></IconButton>
-                <IconButton className='social-icon'><YouTube fontSize="medium" /></IconButton>
+
+              <Box sx={{ display: 'flex', gap: { xs: 1, sm: 1.5, lg: 2 } }}>
+                <IconButton sx={footerIcon} > <Instagram fontSize="medium" /> </IconButton>
+                <IconButton sx={footerIcon} > <Facebook fontSize="medium" /> </IconButton>
+                <IconButton sx={footerIcon} > <Twitter fontSize="medium" /> </IconButton>
+                <IconButton sx={footerIcon} > <YouTube fontSize="medium" /> </IconButton>
               </Box>
             </Stack>
-          </Grid>
+          </Box>
 
-          {/* Company Links */}
-          <Grid item xs={10} sm={6} md={2}>
-            <Grid container spacing={12}>
-              <Grid item xs={6} sm={6}
-              sx ={{ display: 'flex', flexDirection: 'column' , justifyContent: 'flex-start' }}>
-                <Typography variant="h4" sx={{ paddingBottom: '20px' }}>Company</Typography>
-                <Stack>
-                  {COMPANY_ITEMS.map((label, idx) => (
-                    <Button
-                      key={idx}
-                      variant="text"
-                      className="footer-link"
-                    >
-                      <Typography variant="body3_r">{label}</Typography>
-                    </Button>
-                  ))}
-                </Stack>
-              </Grid>
+          {/* Right Side: Company, Support & Email */}
+          <Box sx={{
+            display: 'flex',
+            gap: { xs: 2, sm: 4, md: 6 },
+            flex: "2",
+            justifyContent: { md: 'flex-end' }
+          }}>
+            {/* Company Links */}
+            <Box sx={ footerStyle }>
+              <Typography variant="h4" sx={{ paddingBottom: { xs: '16px', md: '20px' } }}>
+                Company
+              </Typography>
+              <Stack spacing={{ xs: 0.5, md: 0 }}>
+                {COMPANY_ITEMS.map((label, idx) => (
+                  <Button
+                    key={idx}
+                    variant="text"
+                    className="footer-link"
+                  >
+                    <Typography variant="body3_r">{label}</Typography>
+                  </Button>
+                ))}
+              </Stack>
+            </Box>
 
-              {/* Support Links */}
-              <Grid item xs={6} sm={6}
-              sx ={{ display: 'flex', flexDirection: 'column' , justifyContent: 'flex-start' }}>
-                <Typography variant="h4" sx={{ paddingBottom: '20px' }}>Support</Typography>
-                <Stack>
-                  {SUPPORT_ITEMS.map((label, idx) => (
-                    <Button
-                      key={idx}
-                      variant="text"
-                      className="footer-link"
-                    >
-                      <Typography variant="body3_r">{label}</Typography>
-                    </Button>
-                  ))}
-                </Stack>
-              </Grid>
-
-          
+            {/* Support Links */}
+            <Box sx={ footerStyle }>
+              <Typography variant="h4" sx={{ paddingBottom: { xs: '16px', md: '20px' } }}>
+                Support
+              </Typography>
+              <Stack spacing={{ xs: 0.5, md: 0 }}>
+                {SUPPORT_ITEMS.map((label, idx) => (
+                  <Button
+                    key={idx}
+                    variant="text"
+                    className="footer-link"
+                  >
+                    <Typography variant="body3_r">{label}</Typography>
+                  </Button>
+                ))}
+              </Stack>
+            </Box>
+          </Box>
           {/* Stay Up to Date */}
-          <Grid item xs={12} sm={6} md={3}>
-            <Stack direction="column" spacing={2}>
+          <Box sx={{
+            display: 'flex',
+            gap: { xs: 2, sm: 4, md: 6 },
+            flex: "1",
+            justifyContent: { md: 'flex-end' },
+            minWidth: { sm: '200px', md: '220px' }
+          }}>
+            <Stack direction="column" spacing={{ xs: 1.5, md: 2 }}>
               <Typography variant="h4">Stay up to date</Typography>
               <TextField
                 fullWidth
@@ -97,22 +153,28 @@ export function Footer() {
                   endAdornment: (
                     <InputAdornment position="end">
                       <IconButton onClick={handleSend}>
-                        <CommonIcons.emailicon />
+                        <CommonIcons.EmailIcon sx={{ color: 'neutral.white' }} />
                       </IconButton>
                     </InputAdornment>
                   ),
                 }}
                 InputLabelProps={{
-                  className: 'email-type-label'
+                  sx: {
+                    color: '#D9DBE1',
+                  }
+                }}
+                sx={{
+                  '& .MuiInputBase-root': {
+                    color: '#f5f7fa',
+                    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                    borderRadius: '8px',
+                  }
                 }}
               />
             </Stack>
-          </Grid>
-          
-            </Grid>
-          </Grid>
-        </Grid>
-      </Toolbar>
-    </AppBar>
+          </Box>
+        </Box>
+    </Toolbar>
+    </AppBar >
   );
 }
