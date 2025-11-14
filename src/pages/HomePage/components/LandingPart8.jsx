@@ -1,6 +1,6 @@
 import { Box, Button, Typography, Container, Grid, Stack } from '@mui/material'
 import { ArrowRightAlt } from '@mui/icons-material';
-import '@/themes/styles/global.scss'
+
 
 export function LandingPart8() {
     return (
