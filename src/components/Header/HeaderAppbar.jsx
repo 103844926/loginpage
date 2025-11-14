@@ -45,7 +45,7 @@ export function HeaderAppbar() {
           <Button variant="text" color="primary" onClick={() => navigate('/login')} sx={{ mr: 2 }}>
             Login
           </Button>
-          <Button variant="contained" onClick={() => navigate('/login')} color="primary">
+          <Button variant="contained" sx={{ padding: "0px 30px" }} onClick={() => navigate('/login')} color="primary">
             Sign Up
           </Button>
         </Box>

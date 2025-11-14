@@ -9,8 +9,7 @@ import '@/themes/styles/global.scss'
 export function LandingPart1() {
 
   return (
-    <Box sx={{ backgroundColor: 'neutral.silver' }}>
-      <Container maxWidth="lg" sx={{py: { xs: 6, md: 8 }, px: { xs: 4, md: 0 }}}>
+    <Box sx={{ backgroundColor: 'neutral.silver', py: { xs: 4, md: 8 }, px: { xs: 4, md: 20 } }}>
         <Slider
           dots={true}
           infinite={true}
@@ -94,7 +93,6 @@ export function LandingPart1() {
           </Box>
 
         </Slider>
-      </Container>
     </Box>
   )
 }
