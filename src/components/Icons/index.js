@@ -9,16 +9,16 @@ import { EmailIcon } from './EmailIcon';
 
 /// Icons exclusively for Landing Page - Section 2
 export const Landing2 = {
-    LandingMember: LandingMember,
-    LandingAssociation: LandingAssociation,
-    LandingClubGroup: LandingClubGroup,
-}
+  LandingMember,
+  LandingAssociation,
+  LandingClubGroup,
+};
 
 /// Common Icons
 export const CommonIcons = {
-    BookingIcon: BookingIcon,
-    ClubIcon: ClubIcon,
-    MemberIcon: MemberIcon,
-    PaymentIcon: PaymentIcon,
-    emailicon: EmailIcon,
+  BookingIcon,
+  ClubIcon,
+  MemberIcon,
+  PaymentIcon,
+  EmailIcon,
 };

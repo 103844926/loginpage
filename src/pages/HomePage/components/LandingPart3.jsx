@@ -1,6 +1,6 @@
 import { Box, Button, Typography, Stack, Grid } from '@mui/material'
 import { HomeImages } from '@/const';
-import '@/themes/styles/global.scss';
+;
 
 export function LandingPart3() {
     return (
