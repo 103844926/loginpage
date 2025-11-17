@@ -1,8 +1,7 @@
 // src/components/HeaderAppbar.jsx
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import { HeaderImages } from '@/const';
+import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useTheme } from '@mui/material/styles';
 
 const MENU_ITEMS = [
   { label: 'Home', path: '/home' },
@@ -14,43 +13,42 @@ const MENU_ITEMS = [
 ];
 
 export function HeaderAppbar() {
-  const theme = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
 
   const activePage = location.pathname || '/home';
 
   return (
-    <AppBar 
-      position="static" 
-      sx={{ 
-        backgroundColor: 'neutral.silver', 
-        px: { xs: 4, sm: 6, md: 8, lg: 10, xl: 12 } 
+    <AppBar
+      position="static"
+      sx={{
+        backgroundColor: 'neutral.silver',
+        px: { xs: 4, sm: 6, md: 8, lg: 10, xl: 12 },
       }}
     >
-      <Toolbar 
-        disableGutters 
-        sx={{ 
-          display: 'flex', 
+      <Toolbar
+        disableGutters
+        sx={{
+          display: 'flex',
           justifyContent: 'space-between',
           minHeight: { xs: 64, sm: 70, md: 80 },
-          gap: { sm: 2, md: 3, lg: 4 }
+          gap: { sm: 2, md: 3, lg: 4 },
         }}
       >
         {/* Logo - scales with screen size */}
         <Box sx={{ flexShrink: 0 }}>
-          <img src={HeaderImages.headlogo} alt="Company Logo"  />
+          <img src={HeaderImages.headlogo} alt="Company Logo" />
         </Box>
 
         {/* Desktop Menu - flexible spacing */}
-        <Box 
-          sx={{ 
-            display: { xs: 'none', md: 'flex' }, 
+        <Box
+          sx={{
+            display: { xs: 'none', md: 'flex' },
             alignItems: 'center',
             gap: { md: 0.5, lg: 1, xl: 1.5 },
             flex: 1,
             justifyContent: 'center',
-            maxWidth: '600px'
+            maxWidth: '600px',
           }}
         >
           {MENU_ITEMS.map((item) => (
@@ -59,42 +57,30 @@ export function HeaderAppbar() {
               variant="text"
               color="secondary"
               onClick={() => navigate(item.path)}
-              sx={{ 
+              sx={{
                 fontWeight: activePage === item.path ? 600 : 400,
                 px: { md: 1, lg: 1.5, xl: 2 },
                 minWidth: 'auto',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
               }}
             >
-              <Typography variant="body2_r" >
-                {item.label}
-              </Typography>
+              <Typography variant="body2_r">{item.label}</Typography>
             </Button>
           ))}
         </Box>
 
         {/* Desktop Auth Buttons - responsive sizing */}
-        <Box 
-          sx={{ 
+        <Box
+          sx={{
             display: { xs: 'none', md: 'flex' },
-            gap: "14px",
-            flexShrink: 0
+            gap: '14px',
+            flexShrink: 0,
           }}
         >
-          <Button 
-            variant="text" 
-            color="primary" 
-            onClick={() => navigate('/login')}
-            sx={{ padding: '10px 20px', borderRadius: "6px"}}
-          >
+          <Button variant="text" color="primary" onClick={() => navigate('/login')} sx={{ padding: '10px 20px', borderRadius: '6px' }}>
             Login
           </Button>
-          <Button 
-            variant="contained" 
-            onClick={() => navigate('/login')} 
-            color="primary"
-            sx={{padding: '10px 20px', borderRadius: "6px"}}
-          >
+          <Button variant="contained" onClick={() => navigate('/login')} color="primary" sx={{ padding: '10px 20px', borderRadius: '6px' }}>
             Sign Up
           </Button>
         </Box>

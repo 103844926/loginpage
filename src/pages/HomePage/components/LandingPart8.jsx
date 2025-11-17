@@ -1,6 +1,7 @@
 import { Box, Button, Typography, Container, Grid, Stack } from '@mui/material'
 import { ArrowRightAlt } from '@mui/icons-material';
 
+
 export function LandingPart8() {
     return (
         <Box sx={{ backgroundColor: 'neutral.silver', py: {xs: 4, md: 8}}}>
