@@ -1,13 +1,16 @@
-import { border, color } from "@mui/system";
 import palette from './palates';
 
 const components = {
   MuiContainer: {
     styleOverrides: {
-      root: {
+      root: ({ theme }) => ({
         paddingLeft: '144px',
         paddingRight: '144px',
-      },
+        [theme.breakpoints.down('md')]: {
+          paddingLeft: theme.spacing(2),
+          paddingRight: theme.spacing(2),
+        },
+      }),
     },
   },
 
@@ -33,26 +36,26 @@ const components = {
         fontSize: '1rem',
       },
 
-      containedPrimary: (theme) => ({
-        backgroundColor: palette.primary.main,       // default
+      containedPrimary: {
+        backgroundColor: palette.primary.main, // default
         color: '#fff',
         '&:hover': {
-          backgroundColor: palette.color_shade.s2,     // hover
+          backgroundColor: palette.color_shade.s2, // hover
         },
         '&:active': {
-          backgroundColor: palette.color_shade.s4,     // click / active
+          backgroundColor: palette.color_shade.s4, // click / active
         },
         '&:focus-visible': {
           borderColor: palette.neutral.grey,
           backgroundColor: palette.color_shade.s3, // focus
         },
         '&.Mui-disabled': {
-          backgroundColor: palette.neutral.grey_light,      // disabled
+          backgroundColor: palette.neutral.grey_light, // disabled
           color: palette.neutral.grey_dark,
         },
-      }),
+      },
 
-      outlinedPrimary: (theme) => ({
+      outlinedPrimary: {
         borderColor: palette.primary,
         color: palette.primary,
         '&:hover': {
@@ -68,10 +71,10 @@ const components = {
         },
         '&.Mui-disabled': {
           borderColor: 'transparent',
-          backgroundColor: palette.neutral.grey_light,      // disabled
+          backgroundColor: palette.neutral.grey_light, // disabled
           color: palette.neutral.grey_dark,
         },
-      }),
+      },
 
       textPrimary: {
         color: palette.primary,
@@ -88,11 +91,10 @@ const components = {
         },
         '&.Mui-disabled': {
           borderColor: 'transparent',
-          backgroundColor: palette.neutral.grey_light,      // disabled
+          backgroundColor: palette.neutral.grey_light, // disabled
           color: palette.neutral.grey_dark,
         },
       },
-
     },
     defaultProps: {
       disableElevation: true,
@@ -122,14 +124,15 @@ const components = {
           '&.Mui-focused fieldset': {
             borderColor: 'transparent',
           },
-          '& input': { // Explicitly set input text color
+          '& input': {
+            // Explicitly set input text color
             color: palette.neutral.black,
           },
         },
       },
     },
   },
-  
+
   MuiIconButton: {
     styleOverrides: {
       root: {
@@ -137,27 +140,26 @@ const components = {
         padding: 6,
       },
 
-      colorPrimary: (theme) => ({
-
-        backgroundColor: palette.neutral.grey,       // default
+      colorPrimary: {
+        backgroundColor: palette.neutral.grey, // default
         color: '#fff',
         '&:hover': {
-          backgroundColor: palette.color_shade.s2,     // hover
+          backgroundColor: palette.color_shade.s2, // hover
         },
         '&:active': {
-          backgroundColor: palette.color_shade.s4,     // click / active
+          backgroundColor: palette.color_shade.s4, // click / active
         },
         '&:focus-visible': {
           borderColor: palette.neutral.grey,
           backgroundColor: palette.color_shade.s3, // focus
         },
         '&.Mui-disabled': {
-          backgroundColor: palette.neutral.grey_light,      // disabled
+          backgroundColor: palette.neutral.grey_light, // disabled
           color: palette.neutral.grey_dark,
         },
-      }),
+      },
 
-      colorSecondary: (theme) => ({
+      colorSecondary: {
         color: palette.primary,
         '&:hover': {
           backgroundColor: palette.color_tint.t4,
@@ -170,10 +172,10 @@ const components = {
           backgroundColor: palette.color_tint.t4,
         },
         '&.Mui-disabled': {
-          backgroundColor: palette.neutral.grey_light,      // disabled
+          backgroundColor: palette.neutral.grey_light, // disabled
           color: palette.neutral.grey_dark,
         },
-      }),
+      },
     },
   },
 };
