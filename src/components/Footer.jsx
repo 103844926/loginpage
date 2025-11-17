@@ -1,54 +1,61 @@
 // src/components/Footer.js
-import { useState } from 'react';
-import { styled } from '@mui/material/styles';
-import { Container, Toolbar, Button, TextField, Box, Typography, InputAdornment, IconButton, Grid, Stack } from '@mui/material';
 import { FooterImages } from '@/const';
-import { Twitter, YouTube, Instagram, Facebook } from '@mui/icons-material';
+import { Facebook, Instagram, Twitter, YouTube } from '@mui/icons-material';
+import { Box, Button, Container, IconButton, InputAdornment, Stack, TextField, Toolbar, Typography } from '@mui/material';
+import { styled } from '@mui/material/styles';
+import { useState } from 'react';
 import { CommonIcons } from './icons';
 
 const COMPANY_ITEMS = ['About us', 'Blog', 'Contact us', 'Pricing', 'Testimonials'];
 const SUPPORT_ITEMS = ['Help Center', 'Term of Services', 'Legal', 'Privacy Policy', 'Status'];
 
-export function Footer() {
+const FooterIcon = styled(IconButton)({
+  color: '#fff',
+  backgroundColor: 'rgba(255, 255, 255, 0.1)',
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+  },
+});
 
-  const FooterIcon = styled(IconButton)(({ theme }) => ({
-    color: '#fff',
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    '&:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    },
-  }));
+const FooterBox = styled(Box)(({ theme }) => ({
+  color: '#fff',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  minWidth: '140px',
+  [theme.breakpoints.up('md')]: {
+    minWidth: '160px',
+  },
+}));
 
-  const footerStyle = {
-    color: '#fff',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
-    minWidth: { sm: '140px', md: '160px' },
-  };
-
-  const FooterLink = styled(Button)(({ theme }) => ({
-    color: '#fff',
-    display: 'flex',
-    alignItems: 'flex-start',
-    justifyContent: 'flex-start',
-    paddingLeft: 0,
-    paddingRight: 0,
-    paddingTop: theme.spacing(0.5),
-    paddingBottom: theme.spacing(0.5),
-
+const FooterButton = styled(Button)({
+  color: '#fff',
+  display: 'inline-flex',
+  alignItems: 'flex-start',
+  justifyContent: 'flex-start',
+  padding: '0 0',
+  backgroundColor: 'transparent',
+  width: 'fit-content',
+  minWidth: 'auto',
+  '&:hover': {
     backgroundColor: 'transparent',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
+    color: '#D9DBE1',
+  },
 
-    // responsive padding like your original
-    [theme.breakpoints.up('md')]: {
-      paddingTop: theme.spacing(1),
-      paddingBottom: theme.spacing(1),
-    },
-  }));
+  '&:active': {
+    backgroundColor: 'transparent',
+    color: '#83868dff',
+  },
 
+  '&:focus-visible': {
+    backgroundColor: 'transparent',
+    borderColor: 'transparent',
+  },
+  
+  '& .MuiTouchRipple-root': { display: 'none' }
+});
+
+export function Footer() {
   const [email, setEmail] = useState('');
 
   const handleSend = () => {
@@ -60,8 +67,8 @@ export function Footer() {
       <Container>
         <Toolbar
           sx={{
-            py: "64px",
-            px: "21px",
+            py: '64px',
+            px: '21px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -74,105 +81,163 @@ export function Footer() {
             width="100%"
           >
             {/* Left Side: Logo & Social */}
-            <Box sx={{ flex: "3", minWidth: { md: '200px', lg: '250px' } }}>
+            <Box
+              sx={{
+                flex: '3',
+                minWidth: { md: '200px', lg: '250px' },
+              }}
+            >
               <Stack spacing={{ xs: 3, sm: 4, lg: 5 }}>
-
-                <img src={FooterImages.footlogo} alt="Company Logo"
-                  style={{ width: '200px', height: 'auto' }}
-                />
+                <img src={FooterImages.footlogo} alt="Company Logo" style={{ width: '200px', height: 'auto' }} />
 
                 <Typography variant="body3_r" lineHeight={1.6}>
                   Copyright © 2020 Nexcent ltd. <br /> All rights reserved
                 </Typography>
 
-                <Box sx={{ display: 'flex', gap: { xs: 1, sm: 1.5, lg: 2 } }}>
-                  <FooterIcon > <Instagram fontSize="medium" /> </FooterIcon>
-                  <FooterIcon > <Facebook fontSize="medium" /> </FooterIcon>
-                  <FooterIcon > <Twitter fontSize="medium" /> </FooterIcon>
-                  <FooterIcon > <YouTube fontSize="medium" /> </FooterIcon>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    gap: {
+                      xs: '4px',
+                      sm: '6px',
+                      lg: '8px',
+                    },
+                  }}
+                >
+                  <FooterIcon>
+                    {' '}
+                    <Instagram fontSize="medium" />{' '}
+                  </FooterIcon>
+                  <FooterIcon>
+                    {' '}
+                    <Facebook fontSize="medium" />{' '}
+                  </FooterIcon>
+                  <FooterIcon>
+                    {' '}
+                    <Twitter fontSize="medium" />{' '}
+                  </FooterIcon>
+                  <FooterIcon>
+                    {' '}
+                    <YouTube fontSize="medium" />{' '}
+                  </FooterIcon>
                 </Box>
               </Stack>
             </Box>
 
             {/* Right Side: Company, Support & Email */}
-            <Box sx={{
-              display: 'flex',
-              gap: { xs: 2, sm: 4, md: 6 },
-              flex: "2",
-              justifyContent: { md: 'flex-end' }
-            }}>
+            <Box
+              sx={{
+                display: 'flex',
+                gap: { xs: 2, sm: 4, md: 6 },
+                flex: '2',
+                justifyContent: { md: 'flex-end' },
+              }}
+            >
               {/* Company Links */}
-              <Box sx={footerStyle}>
-                <Typography variant="h4" sx={{ paddingBottom: { xs: '16px', md: '20px' } }}>
+              <FooterBox>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    paddingBottom: {
+                      xs: '16px',
+                      md: '24px',
+                    },
+                  }}
+                >
                   Company
                 </Typography>
-                <Stack spacing={{ xs: 0.5, md: 0 }}>
+                <Stack spacing={{ xs: 1, md: 1.5 }}>
                   {COMPANY_ITEMS.map((label, idx) => (
-                    <FooterLink
-                      key={idx}
-                      variant="text"
-                    >
+                    <FooterButton key={idx} variant="text">
                       <Typography variant="body3_r">{label}</Typography>
-                    </FooterLink>
+                    </FooterButton>
                   ))}
                 </Stack>
-              </Box>
+              </FooterBox>
 
               {/* Support Links */}
-              <Box sx={footerStyle}>
-                <Typography variant="h4" sx={{ paddingBottom: { xs: '16px', md: '20px' } }}>
+              <FooterBox>
+                <Typography
+                  variant="h4"
+                  sx={{
+                    paddingBottom: {
+                      xs: '16px',
+                      md: '24px',
+                    },
+                  }}
+                >
                   Support
                 </Typography>
-                <Stack spacing={{ xs: 0.5, md: 0 }}>
+                <Stack spacing={{ xs: 1, md: 1.5 }}>
                   {SUPPORT_ITEMS.map((label, idx) => (
-                    <FooterLink
-                      key={idx}
-                      variant="text"
-                    >
+                    <FooterButton key={idx} variant="text">
                       <Typography variant="body3_r">{label}</Typography>
-                    </FooterLink>
+                    </FooterButton>
                   ))}
                 </Stack>
-              </Box>
+              </FooterBox>
             </Box>
             {/* Stay Up to Date */}
-            <Box sx={{
-              display: 'flex',
-              gap: { xs: 2, sm: 4, md: 6 },
-              flex: "1",
-              justifyContent: { md: 'flex-end' },
-              minWidth: { sm: '200px', md: '220px' }
-            }}>
-              <Stack direction="column" spacing={{ xs: 1.5, md: 2 }}>
-                <Typography variant="h4">Stay up to date</Typography>
-                <TextField
-                  fullWidth
-                  label={<Typography variant="body3_r" color="#D9DBE1" > Your email address </Typography>}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  InputProps={{
-                    className: 'email-type-field',
-                    endAdornment: (
-                      <InputAdornment position="end">
-                        <FooterIcon onClick={handleSend}>
-                          <CommonIcons.EmailIcon sx={{ color: 'neutral.white' }} />
-                        </FooterIcon>
-                      </InputAdornment>
-                    ),
-                  }}
-                  sx={{
-                    '& .MuiInputBase-root': {
-                      color: '#f5f7fa',
-                      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                      borderRadius: '8px',
+            <Box
+              sx={{
+                display: 'flex',
+                gap: { xs: 2, sm: 4, md: 6 },
+                flex: '2',
+                justifyContent: { md: 'flex-end' },
+              }}
+            >
+              <FooterBox>
+                <Stack direction="column">
+                  <Typography
+                    variant="h4"
+                    sx={{
+                      paddingBottom: {
+                        xs: '16px',
+                        md: '24px',
+                      },
+                    }}
+                  >
+                    Stay up to date
+                  </Typography>
+                  <TextField
+                    size="small"
+                    fullWidth
+                    label={
+                      <Typography variant="body3_r" color="#D9DBE1">
+                        {' '}
+                        Your email address{' '}
+                      </Typography>
                     }
-                  }}
-                />
-              </Stack>
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    InputProps={{
+                      className: 'email-type-field',
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton onClick={handleSend}>
+                            <CommonIcons.EmailIcon
+                              sx={{
+                                color: 'neutral.white',
+                              }}
+                            />
+                          </IconButton>
+                        </InputAdornment>
+                      ),
+                    }}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        color: '#f5f7fa',
+                        backgroundColor: 'rgba(255, 255, 255, 0.2)',
+                        borderRadius: '8px',
+                      },
+                    }}
+                  />
+                </Stack>
+              </FooterBox>
             </Box>
           </Stack>
         </Toolbar>
-      </Container >
+      </Container>
     </Box>
   );
 }
