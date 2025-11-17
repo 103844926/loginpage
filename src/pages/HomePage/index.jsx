@@ -1,16 +1,15 @@
 // src/pages/HomePage.jsx
-import { Box } from '@mui/material'
-import { Header, Footer } from '@/components';
+import { Footer, Header } from '@/components';
+import { Box } from '@mui/material';
+import 'slick-carousel/slick/slick-theme.css';
+import 'slick-carousel/slick/slick.css';
 import * as Landing from './components';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 export default function HomePage() {
-
   return (
-    <Box >
+    <Box>
       <Header />
-      
+
       <Landing.LandingPart1 />
 
       <Landing.LandingPart2 />
@@ -29,5 +28,5 @@ export default function HomePage() {
 
       <Footer />
     </Box>
-  )
+  );
 }
