@@ -1,24 +1,24 @@
-import { LandingMember } from './LandingMember';
-import { LandingAssociation } from './LandingAssociation';
-import { LandingClubGroup } from './LandingClubGroup';
 import { BookingIcon } from './BookingIcon';
 import { ClubIcon } from './ClubIcon';
+import { EmailIcon } from './EmailIcon';
+import { LandingAssociation } from './LandingAssociation';
+import { LandingClubGroup } from './LandingClubGroup';
+import { LandingMember } from './LandingMember';
 import { MemberIcon } from './MemberIcon';
 import { PaymentIcon } from './PaymentIcon';
-import { EmailIcon } from './EmailIcon';
 
 /// Icons exclusively for Landing Page - Section 2
 export const Landing2 = {
-  LandingMember,
-  LandingAssociation,
-  LandingClubGroup,
+  LandingMember: LandingMember,
+  LandingAssociation: LandingAssociation,
+  LandingClubGroup: LandingClubGroup,
 };
 
 /// Common Icons
 export const CommonIcons = {
-  BookingIcon,
-  ClubIcon,
-  MemberIcon,
-  PaymentIcon,
-  EmailIcon,
+  BookingIcon: BookingIcon,
+  ClubIcon: ClubIcon,
+  MemberIcon: MemberIcon,
+  PaymentIcon: PaymentIcon,
+  EmailIcon: EmailIcon,
 };

@@ -1,7 +1,7 @@
 import { createTheme } from '@mui/material/styles';
+import components from './components';
 import palette from './palates';
 import typography from './typography';
-import components from './components';
 
 const theme = createTheme({
   palette,
@@ -12,7 +12,7 @@ const theme = createTheme({
       xs: 0,
       sm: 600,
       md: 900,
-      lg: 1440, 
+      lg: 1440,
       xl: 1920,
     },
   },

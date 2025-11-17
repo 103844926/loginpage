@@ -1,15 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { ThemeProvider, CssBaseline } from '@mui/material';
-import theme from './themes';
 import '@fontsource/inter/400.css'; // regular
 import '@fontsource/inter/500.css'; // medium
 import '@fontsource/inter/600.css'; // semi-bold
 import '@fontsource/inter/700.css'; // bold
-
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import reportWebVitals from './reportWebVitals';
+import theme from './themes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

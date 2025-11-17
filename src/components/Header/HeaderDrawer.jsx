@@ -1,10 +1,10 @@
 // src/components/HeaderDrawer.jsx
-import { AppBar, Toolbar, Box, IconButton, Drawer, List, ListItem, ListItemButton, ListItemText, Button } from '@mui/material';
 import { HeaderImages } from '@/const';
-import { Menu, Close } from '@mui/icons-material';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { Close, Menu } from '@mui/icons-material';
+import { AppBar, Box, Button, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const MENU_ITEMS = [
   { label: 'Home', path: '/home' },
@@ -30,16 +30,19 @@ export function HeaderDrawer() {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: 'neutral.silver' }}>
-        <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', px: { xs: 2, md: 12 } }}>
+      <AppBar position="static" sx={{ backgroundColor: theme.palette.neutral.silver }}>
+        <Toolbar
+          disableGutters
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            px: { xs: 2, md: 12 },
+          }}
+        >
           <img src={HeaderImages.headlogo} alt="Company Logo" style={{ width: 120, height: 'auto' }} />
 
           {/* Mobile Menu Icon */}
-          <IconButton
-            sx={{ display: { xs: 'flex', md: 'none' } }}
-            onClick={() => setMobileMenuOpen(true)}
-            color="secondary"
-          >
+          <IconButton sx={{ display: { xs: 'flex', md: 'none' } }} onClick={() => setMobileMenuOpen(true)} color="secondary">
             <Menu />
           </IconButton>
         </Toolbar>
@@ -52,7 +55,7 @@ export function HeaderDrawer() {
         onClose={() => setMobileMenuOpen(false)}
         sx={{
           display: { xs: 'block', md: 'none' },
-          '& .MuiDrawer-paper': { width: 250 }
+          '& .MuiDrawer-paper': { width: 250 },
         }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
@@ -64,14 +67,11 @@ export function HeaderDrawer() {
         <List>
           {MENU_ITEMS.map((item) => (
             <ListItem key={item.path} disablePadding>
-              <ListItemButton
-                onClick={() => handleMenuClick(item.path)}
-                selected={activePage === item.path}
-              >
+              <ListItemButton onClick={() => handleMenuClick(item.path)} selected={activePage === item.path}>
                 <ListItemText
                   primary={item.label}
                   primaryTypographyProps={{
-                    fontWeight: activePage === item.path ? 500 : 400
+                    fontWeight: activePage === item.path ? 500 : 400,
                   }}
                 />
               </ListItemButton>
@@ -83,7 +83,10 @@ export function HeaderDrawer() {
               fullWidth
               variant="text"
               color="primary"
-              onClick={() => { navigate('/login'); setMobileMenuOpen(false); }}
+              onClick={() => {
+                navigate('/login');
+                setMobileMenuOpen(false);
+              }}
               sx={{ mb: 1 }}
             >
               Login
@@ -92,7 +95,10 @@ export function HeaderDrawer() {
               fullWidth
               variant="contained"
               color="primary"
-              onClick={() => { navigate('/login'); setMobileMenuOpen(false); }}
+              onClick={() => {
+                navigate('/login');
+                setMobileMenuOpen(false);
+              }}
             >
               Sign Up
             </Button>
