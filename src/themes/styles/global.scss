@@ -1,78 +1,77 @@
 .img-box {
-    width: 80%;
-    height: auto;
-    display: block;
+  width: 80%;
+  height: auto;
+  display: block;
 }
 
 .row-center {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .column-center {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .small-column-center {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .small-column-center img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
 }
 
 .flex-box-normal {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
 
-    @media (min-width: 900px) {
-        flex-direction: row;
-    }
+  @media (min-width: 900px) {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .stack-row-container {
-    display: flex;
-    flex-direction: row ;
-    flex-wrap: wrap ;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 32px;
 }
 
 .overlay-content {
-    position: relative;
-    bottom: 70px;
-    left: 0;
-    right: 0;
-    width: 317px;
-    height: 176px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    gap: 16px;
-    padding: 16px 16px;
-    height: 176px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    ;
+  position: relative;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  width: 317px;
+  height: 176px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  gap: 16px;
+  padding: 16px 16px;
+  height: 176px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-
