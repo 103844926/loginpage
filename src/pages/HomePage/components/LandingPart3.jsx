@@ -1,5 +1,6 @@
 import { Container, Box, Button, Typography, Stack, Grid } from '@mui/material'
 import { HomeImages } from '@/const';
+;
 
 export function LandingPart3() {
     return (
