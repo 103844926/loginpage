@@ -30,7 +30,7 @@ export function HeaderDrawer() {
 
   return (
     <>
-      <AppBar position="static" sx={{ backgroundColor: theme.palette.neutral.silver }}>
+      <AppBar position="static" sx={{ backgroundColor: 'neutral.silver' }}>
         <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', px: { xs: 2, md: 12 } }}>
           <img src={HeaderImages.headlogo} alt="Company Logo" style={{ width: 120, height: 'auto' }} />
 

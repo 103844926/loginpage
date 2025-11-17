@@ -1,6 +1,10 @@
 import { Box, Button, Typography, Container, Stack, Grid } from '@mui/material'
 import { HomeImages } from '@/const';
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "@/themes/styles/slider.scss";
+
 
 export function LandingPart1() {
 
