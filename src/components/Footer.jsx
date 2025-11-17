@@ -44,13 +44,15 @@ const FooterButton = styled(Button)({
 
   '&:active': {
     backgroundColor: 'transparent',
-    color: '#B0B3BA',
+    color: '#83868dff',
   },
 
   '&:focus-visible': {
     backgroundColor: 'transparent',
     borderColor: 'transparent',
   },
+  
+  '& .MuiTouchRipple-root': { display: 'none' }
 });
 
 export function Footer() {
